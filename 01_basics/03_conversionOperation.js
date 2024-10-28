@@ -49,3 +49,57 @@ let stringNumber = String(someNumber);
 
 console.log(stringNumber);
 console.log(typeof stringNumber);
+
+// -----Operations---------------------------
+let value = 3;
+let negValue = -value;
+console.log(negValue);
+//Basic operations(Arithmatic Operations)
+// console.log(2+2);
+// console.log(2-2);
+// console.log(2*2);
+// console.log(2**2); power
+// console.log(2/3);
+// console.log(2%2);
+
+//operations on string
+let str1 = "hello";
+let str2 = " hitesh";
+let str3 = str1 + str2;
+console.log(str3); //hello hitesh
+
+//problem area
+// console.log(1 + "2"); //12
+// console.log("1" + 2); // 12
+// console.log("1" + 2+ 2); //122
+// console.log(1+ 2+ "2"); //32
+
+
+//note: when js conversion : do not depend on these above example
+//note: rule: string first: everything will be treated as a string
+//note: string at last ..phle conversion ho jayega.
+//note: do not write code like this in real life.
+console.log(3+4*5%3); 
+
+//tricky conversion
+console.log(+true); // output 1 // increment of a boolean
+// console.log(true+); // error
+console.log(+""); // 0
+
+let num1, num2, num3
+num1 = num2 = num3 = 2+2;// bad coding practise
+
+// precedence operator
+let gameCounter = 100;
+// gameCounter++; //post fix operator
+++gameCounter; // pre fix operator
+console.log(gameCounter); //101
+
+
+
+
+
+
+
+
+
