@@ -87,4 +87,3 @@ const max = 20;
 console.log(Math.floor(Math.round()* (max - min +1) + min)); //+1 avoid 0 value
 
 
-
