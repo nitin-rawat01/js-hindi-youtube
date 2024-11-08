@@ -13,6 +13,7 @@ accountCity = "Jaipur" //possibility :variable can be declare like this
 //{} this curlybraces is scope
 //on inital days javascript does not work on the basis of scope
 //var have scope problem
+
 //shortcut: log press enter
 
 // accountId = 2; not allowed

@@ -40,7 +40,7 @@ let state; // undefined
 // Object
 
 console.log(typeof null); // output: object: some called it as a error in a language.
-console.log(typeof undefined); // output: undefined: because undefined is type in javascript
+console.log(typeof undefined); // output: undefined: because undefined is a type in javascript
 
 //it change the way js is executed it changes to use strict operating context.
 /* 
