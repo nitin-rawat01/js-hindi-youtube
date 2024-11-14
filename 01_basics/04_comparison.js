@@ -37,7 +37,12 @@ console.log("2" === 2 ); //false
 // note: Avoid comparison of like : null with numbers and undefined with numbers.
 //clean code is priority.
 
-
+/*Summary
+    Point 1: never compare values of different data types.Answer is unpredictable
+    Point 2: comparing null with <, >, <=, >=: convert null into 0(number) before comparion
+    Point 3: comparing null with ==: works diff than less than or greater than comparison
+    Point 4: comparing undefined gives false in every case
+*/
 
 
 
