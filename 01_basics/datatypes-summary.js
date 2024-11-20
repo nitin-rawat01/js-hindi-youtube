@@ -49,14 +49,15 @@ console.log(typeof heroes); // object
 console.log(typeof id); //symbol
 
 //////////////////how memory works in javascript/////////////////
+//Video: stack and heap memory in javascript.
 
 //working of memory: early days from language like c. where reserve and free memory is programmer responsiblity.
 //In modern and mid-modern programming language ..memory allocation is not given instead we get //automatic garbage collection.
 
 //memory allocation in javascript
 //two types of memory: stack(primitive) , heap(non-primitive type)
-//In primitive data types stack memory is use.
-//In non-primitive data types heap memory is use.
+//In primitive data types  use  stack memory 
+//In non-primitive data types heap memory is used.
 //When stack memory is used we get the copy of the variable declared.
 //When we use heap, we get reference of the original value(obj, funciton), any changes will change the original value.
 /*
