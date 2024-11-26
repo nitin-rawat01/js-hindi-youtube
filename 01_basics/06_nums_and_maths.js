@@ -2,9 +2,10 @@
 const score = 400 //js automatically detect this as number
 // console.log(score); //400 : automatically define number
 
-//explicitly defining number data type
-//predefined objects in javascript: String, Number etc
+//we can explicitly defining number data type in javascript by using Number object.
+//we got many predefined objects in javascript: String, Number etc
 const balance = new Number(100.567546); //100% number
+
 // console.log(typeof balance); //[Number: 100] specificaly cast number
 // console.log( balance); //object // properties available through prototype
 
@@ -17,8 +18,7 @@ const balance = new Number(100.567546); //100% number
 //precision value
 //toFixed():The toFixed() method converts a number to a string.
 //The toFixed() method rounds the string to a specified number of decimals(after point).
-// console.log( balance.toFixed(2)); 
-
+// console.log(balance.toFixed(2)); 
 
 //toPrecision():Converts number into string: ASKED IN INTERVIEW
 //The toPrecision() method formats a number to a specified length.
@@ -36,15 +36,17 @@ const hundreds = 1000000;
 // Anwser: Yes
 //Number keyword: function (we create object from this Number function with new keyword).
 //concept: maxValue(kitni maximum value number me le skte hai...not talking about bigInt) and minValue.
-//Number: data type...many properties
+//Number: we have number as a data type with many properties attached
 /* from console in dev tools
  Number
 ƒ Number() { [native code] }
-Number.MAX_VALUE
-1.7976931348623157e+308 //max value of number in javascript
-Number.MIN_VALUE // min value of number in javascript
-5e-324
-Number.MAX_SAFE_INTEGER //safest interget value that can be stored.
+Number.: give us many values
+//max value of number in javascript
+Number.MAX_VALUE -> 1.7976931348623157e+308 
+// min value of number in javascript
+Number.MIN_VALUE -> 5e-324
+//Maximum safest interget value that can be stored.
+Number.MAX_SAFE_INTEGER 
 9007199254740991
 */
 
@@ -79,11 +81,17 @@ console.log(Math.random());
 console.log((Math.random()*10) + 1);
 //+1 will remove value like 0.04
 
+//trick: defining formula to get number between 10-20
 //special case /trick : number between 10-20(including 10)
 //trick to define min and max with formula
 const min = 10;
 const max = 20;
 
 console.log(Math.floor(Math.round()* (max - min +1) + min)); //+1 avoid 0 value
+//breakdown 
+//some time we define min and max
+//max-min give us the range in this case is 10
+//max - min + 1: +1 to avoid zero case.
+//outside the bracket: +min: we +min to set the minimum value we need..value cannot go below minimum value.
 
 
