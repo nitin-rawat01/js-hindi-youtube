@@ -1,4 +1,5 @@
 //define number in javascript
+//in js number -> integer and float
 const score = 400 //js automatically detect this as number
 // console.log(score); //400 : automatically define number
 
@@ -15,10 +16,12 @@ const balance = new Number(100.567546); //100% number
 // console.log( balance.toString().length);
 // note:you can use string methods after converting number into string
 
-//precision value
+//precision values methods: toFixed() and toPrecision();
+
 //toFixed():The toFixed() method converts a number to a string.
 //The toFixed() method rounds the string to a specified number of decimals(after point).
 // console.log(balance.toFixed(2)); 
+console.log(Math.round(500.65)); //501 //round before decimal point
 
 //toPrecision():Converts number into string: ASKED IN INTERVIEW
 //The toPrecision() method formats a number to a specified length.
@@ -28,14 +31,19 @@ const otherNumber = 23.8966;
 // console.log(otherNumber.toPrecision(1));//precise number from left to right upto given number of digit.
 //be sure of the number of value before decimal.
 
+//toLocaleString():return a number as a string using a locale languange format
 const hundreds = 1000000;
+////number format is based on indian number system
 // console.log(hundreds.toLocaleString('en-IN'));
 
 //for competitive programming and DSA 
 //function se object create hota hai javascript me ?
 // Anwser: Yes
+
 //Number keyword: function (we create object from this Number function with new keyword).
 //concept: maxValue(kitni maximum value number me le skte hai...not talking about bigInt) and minValue.
+// concept: max-value and min-value: Means maximum and minimum value which can be used/taken in js as a Number
+//note :not talking about bigInt
 //Number: we have number as a data type with many properties attached
 /* from console in dev tools
  Number
