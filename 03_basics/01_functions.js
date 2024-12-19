@@ -57,3 +57,41 @@ console.log( loginUserMessage());//if no value is passed ..it will show undefine
 console.log( loginUserMessage("Hitesh")); //Hitesh will overwrite sam
 
 // Type of Parameters in Function 
+// Case: Shopping Cart Example 
+//Situation: unaware of the number of arguments 
+//Always give your function meaning ful name  
+//to let function handle multiple arguments: use rest operator
+// symbol for rest and spread operator is same
+function caculateCartPrice(val1, val2, ...num1){ // rest operator: pack the inputs into a bundle
+    return num1;
+}
+console.log(caculateCartPrice(200, 300, 400, 500)); //output: [400, 500]
+
+//passing object in a function 
+const user = {
+    username: 'hitesh',
+    price: 199
+}
+function handleObject(anyobject){
+    console.log(`User name is ${anyobject.username} and price is ${anyobject.price}`);
+    //note: when handling object we need to check for type safety
+    //1st check: check for values available in object
+    //2nd check: argument is an object/ data type of object..you can check it through if else
+}
+
+// handleObject(user);
+//you can directly pass the object as argument
+handleObject({
+    username: 'sam',
+    price: 399
+});
+
+//passing array in function 
+const myNewArray = [200, 400, 100, 600];
+
+function returnSecondValue(getArray){
+    return getArray[1];
+}
+// console.log(returnSecondValue(myNewArray));
+//you can directly pass the array as argument
+console.log(returnSecondValue([200, 400, 100, 600]));
