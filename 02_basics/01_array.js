@@ -19,6 +19,8 @@ const myArr = [0, 1, 2, 3, 4, 5];
 //when we do copy operation in array it create shallow copies.
 //JavaScript array-copy operations create shallow copies. (All standard built-in copy operations with any JavaScript objects create shallow copies, rather than deep copies).
 //shallow copies:A shallow copy of an object is a copy whose properties share the same references (point to the same underlying values) as those of the source object from which the copy was made. As a result, when you change either the source or the copy, you may also cause the other object to change too. That behavior contrasts with the behavior of a deep copy, in which the source and copy are completely independent
+// In the context of the first line, properties refer to the individual key-value pairs that make up an object in JavaScript.
+// So when it says "properties share the same references," it means that when you make a shallow copy of an object, the properties (the keys and their associated values) in the copied object will still point to the same references in memory as the original object. 
 
 //Second type of array
 const Heroes = ['shaktiman', 'naagraj'];
