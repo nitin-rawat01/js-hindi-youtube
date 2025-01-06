@@ -5,9 +5,10 @@
 // 1st method: constructor method
 let User = Object.create({});
 //empty object is created without any property
-//object created by constructor method creates singleton object...means object is one of its kind
+
 
 //2nd method: object literalls -> {}
+//object created by object literalls method creates singleton object...means object is one of its kind
 let jsUser = {
     name: 'hitesh', //key:value note: system process key as a string like ->  "name"
     //value: string, num, function, bool, object, array
@@ -20,10 +21,7 @@ let jsUser = {
     lastLoginDays: ['Monday', 'Saturday']
 };
 
-//Note:
-//object created by object literals is not singleton object...means it has mulitple instances.
-//interview: singleton is not created when object is created by object literals. by constructor always singleton
-//there is not diff between objects created by contructor or literalls only diff is singleton
+
 
 // Accessing Objects
 // 1st method: called dot notation
@@ -38,7 +36,7 @@ console.log(jsUser.fullName)
 console.log(jsUser["full name"]);
 console.log(jsUser["full name"]);
 //result: no difference in result  when  access fullName with dot notation or bracket notation
-//difference will occure when there is space in key name like full name then dot notation can not be used to access key's value.
+//difference will occure when there is space in key name like "full name" then dot notation can not be used to access key's value.
 
 // symbol data type in javascript
 //declaring symbol
@@ -59,7 +57,8 @@ console.log(typeof User1[mySym]); //symbol
 
 // console.log(typeof (JsUser[mySym)) is giving string Because the value you've assigned to the Symbol key in the JsUser object is a string So, when you fetch the value of this key and check its type, it tells you it's a string.  and if you pass like this  const mySym = Symbol("user1");   const JsUser = {    [mySym]:mySym,} now it will give typeOf Symbol
 
-// If you want to determine that the property uses a Symbol key, you can check the property keys of the object and see if any of them are Symbols. Here's an example of how you can do this:    
+// If you want to determine that the property uses a Symbol key, you can check the property keys of the object and see if any of them are Symbols. Here's an example of how you can do this:   
+// The Object.getOwnPropertySymbols() static method returns an array of all symbol properties found directly upon a given object. 
   if (Object.getOwnPropertySymbols(User1).includes(mySym)) {
 
         console.log("the property has a Symbol key.");
