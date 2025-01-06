@@ -72,7 +72,7 @@ console.log(typeof User1[mySym]); //symbol
 //Basics of Objects
 //changing values of objects
 jsUser.email = "hitesh@chatgpt.com";
-// freeze the value of objects:
+// freeze the value of objects:   
 // Object.freeze(jsUser);
 //no value can be changed after this ...this will not show any error but changes will not propogate.
 jsUser.email = "hitesh@microsoft.com";
