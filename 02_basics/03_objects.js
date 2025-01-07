@@ -4,6 +4,20 @@
 
 // 1st method: constructor method
 let User = Object.create({});
+//correction:
+//create method: The Object.create() static method creates a new object, using an existing object as the prototype of the newly created object.
+// const person = new Object();
+// person.name = "hitesh"
+// person.email = "hitesh@google.com"
+// const person2 = Object.create(person);
+// console.log(person2); prototype of person2 contains properties of person 
+//syntax: 
+//Object.create(proto) proto :The object which should be the prototype of the newly-created object.
+//Object.create(proto, propertiesObject)
+
+//Actual Method to create an object Object keyword
+
+
 //empty object is created without any property
 
 
@@ -52,7 +66,7 @@ const User1 = {
 }
 console.log(User1.mySym); "myKey1"
 console.log(typeof User1.mySym); "string"
-console.log(User1[mySym]); //Symbol(key1)
+console.log(User1[mySym]); //Symbol(key1) this is the only way to access symbol key.
 console.log(typeof User1[mySym]); //symbol
 
 // console.log(typeof (JsUser[mySym)) is giving string Because the value you've assigned to the Symbol key in the JsUser object is a string So, when you fetch the value of this key and check its type, it tells you it's a string.  and if you pass like this  const mySym = Symbol("user1");   const JsUser = {    [mySym]:mySym,} now it will give typeOf Symbol
