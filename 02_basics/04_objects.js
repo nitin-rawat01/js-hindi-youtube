@@ -36,7 +36,7 @@ const obj4 = {5:"a", 6: "b"};
 //const obj3 = {obj1, obj2}; // {obj1: { '1': 'a', '2': 'b' }, obj2: { '3': 'a', '4': 'b' }}
 
 //using assign method of Object
-// he Object.assign() static method copies all enumerable own properties from one or more source 
+// the Object.assign() static method copies all enumerable own properties from one or more source 
 //  objects to a target object. It returns the modified target object.
 // syntax: Object.assign(target, source); //target will be modified
 // const obj3 = Object.assign(obj1, obj2); //obj1 will be modified and will be same
@@ -93,7 +93,7 @@ const obj6 = {...obj1, ...obj2};
 //note: you can close the looping of the objects by using some methods 
 
 //Object de-structure and JSON API intro
-//de-structuring of objects 
+//de-structuring of objects    
 // In react: receive object -> need to destructure object -> get values (we can also directly access the values)
 
 const course = {
