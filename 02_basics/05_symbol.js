@@ -79,6 +79,27 @@ console.log('Admin: ', admin);
 // The method Symbol.for(tokenString) takes a string key and returns a symbol value from the registry, while Symbol.keyFor(symbolValue) takes a symbol value and returns the string key corresponding to it. Each is the other's inverse, so the following is true:
 
 console.log(Symbol.keyFor(Symbol.for("id")) === "id");//true
+ // But sometimes we want same-named symbols to be same entities.
+// For instance, different parts of our application want to access symbol "id" meaning exactly the same property.
+// To achieve that, there exists a global symbol registry. We can create symbols in it and access them later, and it guarantees that repeated accesses by the same name return exactly the same symbol.
+// read from the global registry
+let ID = Symbol.for('id') // // if the symbol did not exist, it is created
+
+// read it again (maybe from another part of the code)
+let idAgain =  Symbol.for('id');
+
+// the same symbol
+console.log(ID === idAgain); //true
+// Symbols inside the registry are called global symbols. If we want an application-wide symbol, accessible everywhere in the code – that’s what they are for.
+
+// Symbol.keyFor(): return the name of the symbol by symbol
+// We have seen that for global symbols, Symbol.for(key) returns a symbol by name. To do the opposite – return a name by global symbol – we can use: Symbol.keyFor(sym):
+let sym = Symbol.for("name");
+let sym2 = Symbol.for('id-1');
+console.log(Symbol.keyFor(sym)); //name
+console.log(Symbol.keyFor(sym2)) //id-1
+// The Symbol.keyFor internally uses the global symbol registry to look up the key for the symbol. So it doesn’t work for non-global symbols. If the symbol is not global, it won’t be able to find it and returns undefined
+// That said, all symbols have the description property.
 
 
 
