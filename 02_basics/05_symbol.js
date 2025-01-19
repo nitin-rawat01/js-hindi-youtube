@@ -100,11 +100,12 @@ console.log(Symbol.keyFor(sym)); //name
 console.log(Symbol.keyFor(sym2)) //id-1
 // The Symbol.keyFor internally uses the global symbol registry to look up the key for the symbol. So it doesn’t work for non-global symbols. If the symbol is not global, it won’t be able to find it and returns undefined
 // That said, all symbols have the description property.
+// We can say that we have two types of symbol: global symbols(for and keyFor) and non-global symbols(Symbol).
 
 
 
 
-
-
+// Technically, symbols are not 100% hidden. There is a built-in method Object.getOwnPropertySymbols(obj) that allows us to get all symbols. Also there is a method named Reflect.ownKeys(obj) that returns all keys of an object including symbolic ones. But most libraries, built-in functions and syntax constructs don’t use these methods.
+// topic left: system symbol
 
 
