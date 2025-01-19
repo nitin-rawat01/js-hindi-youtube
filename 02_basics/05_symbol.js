@@ -1,5 +1,6 @@
 // Javascript: symbol
 //only two primitive data types can serve as a key/ property name of an objec: strind and symbol, anyother primitive data type autoconverted to string. 
+// symbols are also immutable
 let person = {
     1: 'one',
     true: "true",
@@ -63,6 +64,24 @@ console.log(Object.keys(mainUser)); //[ 'name', 'fullName', 'age', 'isLoggedIn' 
 let admin = Object.assign({}, mainUser);
 console.log('Admin: ', admin);
 // There’s no paradox here. That’s by design. The idea is that when we clone an object or merge objects, we usually want all properties to be copied (including symbols like id).
+
+// Global Symbol Registry
+// Symbol() function will create a Symbol whose value remains unique throughout the lifetime of the program. 
+// To create Symbols available across files and even across realms (each of which has its own global scope), use the methods Symbol.for() and Symbol.keyFor() to set and retrieve Symbols from the global Symbol registry.
+// Note: global symbol registry is only a ficticious concept and may not correspond to any internal data structure in the javascript engine. — and even if such a registry exists, its content is not available to the JavaScript code, except through the for() and keyFor() methods.
+// Symbol.for(): is a static method(inbuilt) searches for existing symbols in a runtime-wide symbol registry with the given key and return if found. Otherwise a new symbol gets created in the global symbol registry with this key.
+// syntax: Symbol.for(key);
+// Here “Symbol” is the symbol that is to be searched into the runtime-wide symbol registry.
+// key: String, required. The key for the symbol (and also used for the description of the symbol).
+// Return: An existing symbol with the given key if found; otherwise, a new symbol is created and returned.
+
+// In contrast to Symbol(), the Symbol.for() function creates a symbol available in a global symbol registry list. 
+// The method Symbol.for(tokenString) takes a string key and returns a symbol value from the registry, while Symbol.keyFor(symbolValue) takes a symbol value and returns the string key corresponding to it. Each is the other's inverse, so the following is true:
+
+console.log(Symbol.keyFor(Symbol.for("id")) === "id");//true
+
+
+
 
 
 
