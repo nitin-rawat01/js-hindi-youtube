@@ -10,7 +10,7 @@ function sayMyName(){ //{}: scope of the function, we write definition of functi
     console.log("S");
     console.log("H");    
 }
-// This is reference of function : use of onclick dom manipulation
+// This is reference of function : we use function reference in onclick dom manipulation
 sayMyName;
 // This is execution of function 
 // sayMyName();
@@ -21,7 +21,7 @@ sayMyName;
 // }
 
 //learning about return 
-function addTwoNumbers(number1, number2){ // number1 and number2 are parameter
+function addTwoNumbers(number1, number2){ // number1 and number2 are parameter: input when writing function definition is called parameter.
     let result = number1 + number2;
     // console.log("Hitesh");
 
@@ -33,8 +33,9 @@ function addTwoNumbers(number1, number2){ // number1 and number2 are parameter
 
 //execute the function
 addTwoNumbers(); // output: NaN
-addTwoNumbers(3, 4); //7 , 3 and 4 are arguments
-//Problem: In case input is not a number
+addTwoNumbers(3, 4); //7 , 3 and 4 are arguments, actually value passed when calling a function.
+
+//Problem: In case input is not a number: to handle these problems we use check in a way of if-else statement.
 addTwoNumbers(3, "4"); //34 
 addTwoNumbers(3, "a"); //3a//type- string
 
@@ -56,12 +57,13 @@ function loginUserMessage(username = "sam"){ //setting default value of paramete
 console.log( loginUserMessage());//if no value is passed ..it will show undefined. output undefined just logged in
 console.log( loginUserMessage("Hitesh")); //Hitesh will overwrite sam
 
+// Second Video
 // Type of Parameters in Function 
-// Case: Shopping Cart Example 
-//Situation: unaware of the number of arguments 
-//Always give your function meaning ful name  
-//to let function handle multiple arguments: use rest operator
-// symbol for rest and spread operator is same
+// Case 1: Shopping Cart Example 
+//Situation: unaware of the number of  parameters
+//Note: Always give your function meaning ful name  
+//to let function handle multiple parameters: use rest operator
+// symbol for rest and spread operator is same: ...
 function caculateCartPrice(val1, val2, ...num1){ // rest operator: pack the inputs into a bundle
     return num1;
 }
@@ -72,11 +74,11 @@ const user = {
     username: 'hitesh',
     price: 199
 }
-function handleObject(anyobject){
+function handleObject(anyobject){ //do not use name of the actual object in parameter.
     console.log(`User name is ${anyobject.username} and price is ${anyobject.price}`);
     //note: when handling object we need to check for type safety
-    //1st check: check for values available in object
-    //2nd check: argument is an object/ data type of object..you can check it through if else
+        //1st check: check for values available in object
+        //2nd check: argument is an object/ data type of object..you can check it through if else
 }
 
 // handleObject(user);
