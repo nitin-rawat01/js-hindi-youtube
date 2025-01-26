@@ -20,3 +20,6 @@ console.log(c);  // 30: problem
 console.log('Outside a: ', a);
 
 // Ask in Interview: note: global scope of a browser is different from global scope of a node.
+
+// Scope Level and Mini-Hoisting In Javascipt: Second Video
+// Topics in Scope: Nested scope, closure(technique): must know dom 
