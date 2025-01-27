@@ -23,3 +23,54 @@ console.log('Outside a: ', a);
 
 // Scope Level and Mini-Hoisting In Javascipt: Second Video
 // Topics in Scope: Nested scope, closure(technique): must know dom 
+// {} -> this is scope. if-else, function and loop -> they have there own scope{}, they are separate entity and have no relation with global scope. But Everything in global scope can be accessed in scope. But thing in scope should not be leadked outside of it's scope.
+
+// Nested Scope
+// Nested Scope: funciton inside of a function: How scope will work in this situation.
+
+function one(){
+    const username = 'hitesh'
+    console.log('two is executed first');
+    function two(){ //one is kind a global for two.
+        const website = "youtube"
+        console.log(username);
+    }
+    // console.log(website); //line by line execution ..that's why two() is not run.
+
+    two();
+}
+console.log('one is executed first');
+one(); //first one will executed than two() inside of one will execute.
+
+// closure: child function can access the variable of parent function.
+// if-else scope
+if(true){
+    const username = 'hitesh'
+    if(username === 'hitesh'){
+        const website = 'youtube';
+        console.log(username + ' ' + website);
+    }
+    // console.log(website); //cannot access..outside of its scope
+}
+
+//console.log(username); //outside of its scope.
+
+// ++++++++++++++++++++++++ interesting ++++++++++++++++++++++++
+console.log(addOne(5));
+
+function addOne(num){ //basic function
+    return num + 1;
+}
+
+addOne(5);
+
+
+console.log(addTwo(5)); //throws an error: cannot access 'addTwo' before initialization.
+const addTwo = function (num){ // some time also called expression, variable holding function expresion
+    return num + 2;
+}
+addTwo(5);
+// Note: In javascript variable are powerful they can hold many things like , json value, function etc.
+// two ways to create a function 
+// Hoisting in Function: In case of second function execution context is created where you can not access function before initialization
+
