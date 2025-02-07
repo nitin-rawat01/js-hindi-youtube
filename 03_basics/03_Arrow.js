@@ -40,7 +40,41 @@ chai();
 
 // Arrow Function
 const masalaChai = () => {
-    
+    let username = 'hitesh'
+    // console.log('line 44: ', this.username); //undefined
+    console.log('line 45: ', this); //empty object // no proper explanation given.
+
 }
+masalaChai()
+
+/* 
+Some Explanation from Youtube.
+The 'this' keyword inside a function refers to the object that the function is a property of or the object that the function is called on.  However, the behavior of the this keyword inside an arrow function is different from regular functions.
+In an arrow function the this keyword is lexically scoped, meaning it takes on the values of this keyword in the surronding code.  The this keyword in an arrow function does not get rebound when the function is invoked, unlike regular functions. It keeps the same value as the this keyword in the surrounding code.
+ this in arrow is lexical this and in regular function this refers to its object if it is property of one or else it refers to global window
+*/
 
 
+// Arrow Function: 
+// Basic Arrow Function Syntax.
+const addTwo = (num1, num2) => {
+    return num1 + num2;
+}
+console.log(addTwo(3,4));
+
+//Implicit Return Arrow Function 
+// An implicit return is a way of returning a value from a function without explicitly using the return keyword. 
+// This can be done by using arrow functions, which have a shorthand syntax that allows you to omit the return keyword when the function only has one expression.
+// implicit: not expressed in a direct way but understood by the people involved
+let add = (num1, num2) => num1 + num2;
+// let add = (num1, num2) => {return  num1 + num2}; //if using curly braces need to use "return"
+// let add = (num1, num2) => (num1 + num2);
+
+console.log(add(3,5)) //8
+
+// Another use of paranethesis
+// let sum = (num1, num2) => {username: 'hitesh'}; // undefined
+let sum = (num1, num2) =>   ({username: 'hitesh'}) ; //return object
+console.log(sum(4,5))
+// Explicit return: need to use return keyword.
+// Use of Arrow: in various loop method, event listener etc.
