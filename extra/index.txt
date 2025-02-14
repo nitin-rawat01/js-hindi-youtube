@@ -1,0 +1,7 @@
+This is the Index of the topics covered in this folder
+FileName/topics->     Details
+learningThis -> About "this" keyword in JavaScript,
+             -> Sources -> programing with mosh
+
+callingThis -> About "this" value  depends  on how it's called not define
+             -> Sources -> co-pilot
