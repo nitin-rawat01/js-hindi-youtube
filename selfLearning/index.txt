@@ -1,4 +1,5 @@
-This is the Index of the topics covered in this folder
+This is the Index of the topics covered in this folder.
+
 FileName/topics->     Details
 learningThis -> About "this" keyword in JavaScript,
              -> Sources -> programing with mosh
