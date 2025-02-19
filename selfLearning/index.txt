@@ -6,3 +6,5 @@ learningThis -> About "this" keyword in JavaScript,
 
 callingThis -> About "this" value  depends  on how it's called not define
              -> Sources -> co-pilot
+introThis -> Briefing introduction about "this"
+          -> source -> javascriptInfo (https://javascript.info/object-methods)
