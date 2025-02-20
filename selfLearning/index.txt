@@ -8,3 +8,5 @@ callingThis -> About "this" value  depends  on how it's called not define
              -> Sources -> co-pilot
 introThis -> Briefing introduction about "this"
           -> source -> javascriptInfo (https://javascript.info/object-methods)
+thisTasks.js -> 3 practical question on "this"
+             -> source -> javascriptInfo (https://javascript.info/object-methods)
