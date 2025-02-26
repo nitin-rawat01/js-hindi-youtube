@@ -15,10 +15,23 @@ for (const key in myObj) {
 
 const programming = ['js', "rb", "py", "java", "cpp"];
 for (const key in programming) {
-    console.log(key);
-    console.log(programming[key]);
+    // console.log(key);
+    // console.log(programming[key]);
 }
 
 //In short: for-in loop over keys.
 
-// for
+// for map 
+const map = new Map();
+// setting value in map
+//Map.set(key, value)
+map.set('In', 'India');
+map.set('USA', 'United States of America');
+map.set('FR', 'France');
+for (const key in map) {
+   console.log(key); // nothing happen// map is not iterable 
+} 
+
+// Summart
+// loop over object -> used "for in" loop 
+// loop over array -> used "for of" loop
