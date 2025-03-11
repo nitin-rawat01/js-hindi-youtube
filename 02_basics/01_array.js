@@ -13,7 +13,7 @@ const myArr = [0, 1, 2, 3, 4, 5];
     //arbitrary strings as indexes, but must be accessed using nonnegative integers (or their respective string form) as indexes.
         //example myarr = [1,2,3,45];
             //accessing value inside array
-            //myarr['one']: not applicable, use myarr[0]
+            //myarr['one']: not applicable, use myarr[0] // result-> undefined
 // JavaScript arrays are zero-indexed: the first element of an array is at index 0, the second is at index 1, and so on
 //Asked in Interview: 
 //when we do copy operation in array it create shallow copies.
