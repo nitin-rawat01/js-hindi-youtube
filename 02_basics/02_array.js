@@ -46,6 +46,8 @@ let sparseArray = [1,4, , 5,7,88, , 7,  , 6];
 let denseArray = sparseArray.flat();
 console.log(denseArray); // [1,4,5,7,88,7, 6];
 
+// Web Scrapping: is an automatic method to obtain large amounts of data from websites. Most of this data is unstructured data in an HTML format which is then converted into structured data in a spreadsheet or a database so that it can be used in various application.
+
 //Data scraping: Data scraping, or web scraping, is a process of importing data from websites into files or spreadsheets.
 //sometime we receive data in diff format..like nodelist, objects, string.
 //to convert them into array: use Array
