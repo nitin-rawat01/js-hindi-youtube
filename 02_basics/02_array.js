@@ -35,7 +35,8 @@ const another_array = [1, 2, 3, [4, 5, 6], 7,[6, 7,[4, 5]]];
 
 const real_anothe_array =another_array.flat(Infinity); //try to avoid infinity
 console.log(real_anothe_array); //[1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5]
-
+//     depth: It specifies, how deep the nested array should be flattened. The default value is 1   if no depth value is passed as you guess it is an optional parameter.
+//Return Value: It returns an array i.e. depth levels flatter than the original array, it removes nesting according to the depth levels.
 
 //Data scraping: Data scraping, or web scraping, is a process of importing data from websites into files or spreadsheets.
 //sometime we receive data in diff format..like nodelist, objects, string.
