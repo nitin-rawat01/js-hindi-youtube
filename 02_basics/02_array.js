@@ -38,6 +38,14 @@ console.log(real_anothe_array); //[1, 2, 3, 4, 5, 6, 7, 6, 7, 4, 5]
 //     depth: It specifies, how deep the nested array should be flattened. The default value is 1   if no depth value is passed as you guess it is an optional parameter.
 //Return Value: It returns an array i.e. depth levels flatter than the original array, it removes nesting according to the depth levels.
 
+//Another use flat method
+
+// Using flat() on sparse arrays
+// A sparse array may contain empty or "hole"  items within it, meaning that we can skip one or multiple array items. In javascript spare array is an array in which not all the elements are defined or initialized.
+let sparseArray = [1,4, , 5,7,88, , 7,  , 6];
+let denseArray = sparseArray.flat();
+console.log(denseArray); // [1,4,5,7,88,7, 6];
+
 //Data scraping: Data scraping, or web scraping, is a process of importing data from websites into files or spreadsheets.
 //sometime we receive data in diff format..like nodelist, objects, string.
 //to convert them into array: use Array
