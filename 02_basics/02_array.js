@@ -51,10 +51,26 @@ console.log(denseArray); // [1,4,5,7,88,7, 6];
 //Data scraping: Data scraping, or web scraping, is a process of importing data from websites into files or spreadsheets.
 //sometime we receive data in diff format..like nodelist, objects, string.
 //to convert them into array: use Array
-//isArray(): return true is argument is array
+
+//isArray(): return true if argument is array   
+//the Array.isArray() is static method determines if passed array is an array. 
+//syntax: Array.isArray(value);
+//value:the value to be checked
+//Return value: true if value is an array; otherwise false; false is always return if value is "typed array"
 console.log(Array.isArray("hitesh"));
+console.log(Array.isArray([3,5,6,7]));
+console.log(Array.isArray(new Array(5)));
+console.log(Array.isArray(new Int16Array([15, 56]))); // typed array
+//some false cases
+console.log(Array.isArray(null));
+console.log(Array.isArray(undefined));
+console.log(Array.isArray(12));
+console.log(Array.isArray("Array"));
+console.log(Array.isArray(true));
+//Note: When checking for array instances, Array.isArray() is preferred over instancesof because it work across realms.
 
 //converting into array
+//from
 console.log(Array.from('Hitesh')); //[ 'H', 'i', 't', 'e', 's', 'h' ]
 console.log(Array.from({name: "hitesh"}));  //return empty array
 //cannot directly convert it...tell it before ..make arrays of keys or values.
