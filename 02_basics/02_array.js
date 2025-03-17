@@ -150,4 +150,20 @@ let score1 = 100;
 let score2 = 200;
 let score3 = 300;
 console.log(Array.of(score1, score2, score3));
+// Array.of() method in javascript
+//The Array.of() method creates a new array from any number of arguments. 
+//can take any type of arguments.
+//The Array.of() static method creates a new Array instance from variable number of arguments, regardless of number or type of arguments.
+
+//syntax: Array.of(element1, element2, ... , elementN)
+//Parameters: elements: Optional. Any number of elements regardless of type.
+//Return Value: An Array:  	A new array created from the arguments.The arguments can be strings, numbers, arrays, or any other allowed type.
+
+
+console.log(Array.of("foo", 2, true, "bar"));// [ 'foo', 2, true, 'bar' ]
+console.log(Array.of()); // []
+//The differnce between Array.of and Array(); for creating of any array
+//The difference between Array.of() and Array() constructor is in the handling of single arguments: Array.of(7) creates an array with single element, 7, whereas Array(7) creates an empty array with length property of 7. (That implies an array of 7 empty slots, not slots with actual undefined values.)
+console.log(Array.of(7)); //[ 7 ]
+console.log(Array(7)); //[ <7 empty items> ]
 //read - isArray(), from(), of();
