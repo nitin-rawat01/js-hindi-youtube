@@ -74,6 +74,75 @@ console.log(Array.isArray(true));
 console.log(Array.from('Hitesh')); //[ 'H', 'i', 't', 'e', 's', 'h' ]
 console.log(Array.from({name: "hitesh"}));  //return empty array
 //cannot directly convert it...tell it before ..make arrays of keys or values.
+// Array.from() lets you create Arrays from:
+    // iterable objects (objects such as Map and Set); or, if the object is not iterable,
+    // array-like objects (objects with a length property and indexed elements).
+//to convert an object use: Object.keys, Object.values(), Object.enteries().
+// Array.from() never creates a sparse array. If the arrayLike object is missing some index properties, they become undefined in the new array.
+// Array.from(obj, mapFn, thisArg) has the same result as Array.from(obj).map(mapFn, thisArg)  except that it does not create an intermediate array, and mapFn only receives two arguments (element, index) without the whole array, because the array is still under construction.
+// JavaScript Array Method
+//Array.from(): The Array.from() method return an array from any object with length property.
+//Array.from() is a static method creates a new, shallow-copied Array instances from an "iterable" or" array-like" object
+//retrun an array from any iterable object
+//syntax: Array.from(object/arraLike, mapFunction, thisValue);
+    //object: The object to convert to an array./An iterable or array-like object to convert to an array.
+    
+    //mapFunction: optional A map function to call on each item. A function to call on every element of the array.If provided, every value to be added to the array is first passed through this function, and mapFn's return value is added to the array instead.The function is called with the following arguments:
+            //element: The index of the current element being processed in the array.
+            //index: The index of the current element being processed in the array.
+    //this value: optional A value to use as thisfor the mapFunction
+    const string = 'sahil';
+    let arr = Array.from(string);
+    
+    console.log(arr);
+    
+    // using square Array.from to get multiple of array.
+    const nums = [1,2,3,4];
+    function square(ele){
+        return ele*ele;
+    }
+    const squareNum  = Array.from(nums,square);
+    console.log(squareNum);
+    
+    // getting array of values from object
+    const person = {
+        name: 'sahil',
+        rollNo: 32,
+        email: 'sahil@google.com',
+        isPassed: true,
+    }
+    
+    const values = Array.from(Object.entries(person), (x) => {
+        return x;
+    }, this)
+    
+    console.log(values)
+    
+    //Array from a set
+    const set = new Set(["foo", "bar", "baz", "foo"]);
+    const setArr =  Array.from(set);
+    console.log(setArr);
+    
+    //Array from a map
+    const map = new Map([
+        [1,2],
+        [2,3],
+        [4,6]
+        ])
+    const mapArr = Array.from(map);
+    console.log(mapArr); // [[1, 2], [2, 4], [4, 8]];
+    
+    //values and keys in map
+    const mapper = new Map([
+         ["1", "a"],
+         ["2", "b"],
+        ])
+    const mapperKey = Array.from(mapper.keys());
+    const mapperValue = Array.from(mapper.values());
+    console.log(mapperKey, mapperValue);
+    //you can also make array from node-list, array like objects (arguments)
+    //sequence generator.
+
 
 //Converting mulitple variables or array into array
 // .of : returns a new array from sets of elements.(variables , arrays)
