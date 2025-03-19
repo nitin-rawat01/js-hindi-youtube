@@ -1,0 +1,5 @@
+ DOM: Document Object Model, document-html made from object(head, object etc. ) 
+    dom -> structure of page.
+window object: represent the current window
+document object: represent the document/html
+    console.log(window.document);
