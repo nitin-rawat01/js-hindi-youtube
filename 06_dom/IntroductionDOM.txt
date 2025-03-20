@@ -1,0 +1,34 @@
+ DOM: Document Object Model, document-html made from object(head, body etc. ) 
+    dom -> structure of page.
+window object: represent the current window
+document object: represent the document/html
+    
+Browser console
+    : console.log(window); 
+        // window: is object(complex object): contain document object.
+    to access document object 
+        //console.log(window.document);
+        console.log(document); //same result
+    to access document property 
+        //console.dir(document);
+
+document ka object kis model pe bna hua hai -> understand from diagram
+
+About html document
+    <!Doctype html>-> tell browser that page is html page(especially html 5);
+    page start from <html lang="en">
+
+node: every thing in document object model is called a node: head , body , text are node.
+
+what is the need to understand the model?
+ans. to know which object has how many child and siblings and how to reach them.
+
+//on browser console
+    console.log(document); // to get document 
+    console.log(document.baseURI); //URI of page
+    console.log(document.links); // all links of the document // receive html collection 
+    console.log(document.links[2]); //receive second link
+
+// getting element by id: document.getElementById('firstHeading')
+// editing the element : document.getElementById('firstHeading').innerHTML = "<h1>Chai aur Code</h1>"
+
