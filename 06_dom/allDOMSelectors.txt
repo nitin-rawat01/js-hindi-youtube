@@ -1,0 +1,50 @@
+All DOM Selectors NodeList and HTML collection. 
+
+1st. Selecting Elements by IDs
+ method: document.getElementById("parameter"); // parameter -> id of the element
+
+        example: document.getElementById("title"); //
+         return-> <h1 id="title" class-="heading">DOM learning on chai aur code </h1>
+         note: focus on return expression.what value we received
+Now we can access diff elements/things of the element   
+    for example:  document.getElementById("parameter").id; // return-> title
+    for example:  document.getElementById("parameter").className; return-> heading(class)
+    note: behind the scene document understand class as className. and it is written as className
+    we also use className in JSX.Inside DOM we use className.
+
+Getting the value of attributes of element:
+    document.getElementById("title").getAttribute("attribute name");
+    document.getElementById("title").getAttribute("class"); -> heading
+
+Setting attributes in elements: 
+document.setAttribute('attribute', 'value');
+Note: to avoid to overwrite the value of previous set class.
+document.setAttribute('class', 'newValue oldValue ');
+
+Storing the element inside of a variable-> title = document.getElementById('title');
+// title -> is an object ..we can access class,id with dot notation 
+
+Inserting Styel Elements in elements
+// title.style -> object can be access with dot notaion
+How we add style in html element
+        <h1 id ="title" style="color:red" class="heading">DOM learning on chai aur code </h1>
+//Adding style in title element 
+ example: title.style.backgroundColor = "green";
+          title.style.padding = "15px";.
+
+
+Adding Content Through JavaScript.
+ # getting content-> title.textContent;
+ # getting innerText -> title.innerText 
+ # getting inner html -> title.innerHTML
+ // In this case same value return: DOM learning on chai aur code
+Difference Between textContent and innerText
+innerText: only shows visible text.
+textContent: shows all the text.even if some text is hide(usin css property like display:none);
+innerHTML: return all the html inside of h1 with text and element.
+
+Query Selector: getElementByClass
+ example: document.getElementByClass('heading');
+
+
+Query Selector: document.querySelector('h1'); get first h1
