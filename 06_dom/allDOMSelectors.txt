@@ -72,8 +72,35 @@ document.querySelector('h2'); return first h2 element of the document:
         applying style: turnGreen.style.backgroundColor = "green";
         chaning values: turnGreen.innerText = "five";
 
+querySelectorAll: give all the elements. return-> NodeList
+example:const tempLiList =  document.querySelectorAll('li'): return-> NodeList 
+Note: // NodeList and HTMLCollection are not pure array.
+// easy way to check if they are not array is to check property and prototype
+// we get forEach() but not map() in NodeList.
+//cannot directly do this-> tempLiList.style.backgroundColor = "green"; because tempLiList is
+NodeList. but not a single element.
+// Accessing element of a NodeList: tempLiList[0]; first element
+//changing color: tempLiList[0].style.color = 'green';
 
+Main Difference between querySelector and querySelectorAll is type of data type they return.
+myH1 = document.querySelectorAll('h1'); 
+    //return node list of single element
+    // same method to apply change myH1.style.color = "blue";
 
+// same method to apply forEach on NodeList
+tempLiList.forEach(function(li){ //li -> each list item element
+    li.style.backgroundColor = "red";
+})
+// there are ways to convert NodeList into array but try to use forEach();
 
+// Selector: getElementByClass 
+    return -> HTMLCollection (different than NodeList)
+    // there is no loop method in HTMLCollection.
+//Converting HTMLCollection into array -> Array.from(HTMLCollection);
+cosnt tempLi = document.getElementByClass('list-item');
+const convertedArray = Array.from(tempLi);
+convertedArray.forEach(function(li){
+    li.style.backgroundColor = "blue";
+})
 
 
