@@ -47,4 +47,33 @@ Query Selector: getElementByClass
  example: document.getElementByClass('heading');
 
 
-Query Selector: document.querySelector('h1'); get first h1
+Query Selector: querySelector() and querySelectorAll()
+
+document.querySelector('h1'); return first h1 element of the document.
+
+document.querySelector('h2'); return first h2 element of the document:
+    return:-> <h2>Lorem ipsum dolor sit amet. first one</h2>
+    we can write direct query with query selector. this syntax is very similar to jquery.
+    syntax: document.querySelector("css selector");
+    css selector-> #id, .class, element
+    example: document.querySelector("#title");->
+    <h1 id="title" class="heading">DOM learning on chai aur code 
+            <span style="display:none">test text</span>
+        </h1>
+    document.querySelector(".heading");
+    selecting element with attribute: document.querySelector('input[type="password"]');
+        selecting input with type attribute set to password
+        document.querySelector('input[type = "password"]');
+        remember: you can only use double quote inside of the single quote
+        document.querySelector('p:first-child');
+        selecting ul: 
+        const myUl = document.querySelector('ul');
+        you can further apply query on const turnGreen =  myUl.querySelector('li');
+        applying style: turnGreen.style.backgroundColor = "green";
+        chaning values: turnGreen.innerText = "five";
+
+
+
+
+
+
