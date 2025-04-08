@@ -1,0 +1,6 @@
+React Topics: reconcilliation, dom, virtual dom will be easy to understand after understading dom.
+
+Video About-> relations-> parent-child, child-child, child-parent etc.
+//Help in add created elements in documents: 
+for example: send query to database -> receive some value-> display that value to the user.
+
