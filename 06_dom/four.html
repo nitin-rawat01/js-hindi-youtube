@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chai aur Code | DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff">
+    <ul class="language">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    //1st method: not optimize method
+    function addLanguage(langName){
+       const li =  document.createElement('li');
+       li.innerHTML = `${langName}`;
+    //    adding element to parent element
+    document.querySelector('.language').appendChild(li);
+    }
+    addLanguage('Python');
+    addLanguage('TypeScript');
+    //drawback:appendChild traverse the entire tree..for every time method(addLanguage) run..appendChild() traverse the tree ..which can cause the optimization in large scale project.
+
+    //2nd Method: Optimize method
+    function addOptiLanguage(langName){
+        const li =  document.createElement('li');
+    //    const addText =  document.createTextNode(langName) // store in the variable
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector('.language').appendChild(li);
+    }
+    addOptiLanguage("GoLang");
+    
+     //Edit: first
+     const secondLanguage = document.querySelector("li:nth-child(2)");
+    console.log(secondLanguage);
+    //1st method: not optimize
+    // secondLanguage.innerHTML = "Mojo";
+
+    //2nd Method: optimize(here we are replacing secondLanguage with newly createed element)
+    const newElement = document.createElement('li');
+    newElement.textContent = "Mojo";
+    //adding element:
+    secondLanguage.replaceWith(newElement);
+
+    //Edit: second
+    const firstLang = document.querySelector("li:first-child");
+    //replacing entire outer html
+    firstLang.outerHTML = "<li>TypeScript</li>"
+
+    //Remove
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove(); //remove golang
+</script>
+</html>
