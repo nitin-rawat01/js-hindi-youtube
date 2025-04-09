@@ -7,9 +7,8 @@
 </head>
 <body style="background-color: #212121; color: #fff;">
     <div class="parent">
-
+        <!-- this is a comment -->
         <div class="day">Monday</div>
-        
         <div class="day">Tuesday</div>
         <div class="day">Wednesday</div>
         <div class="day">Thursday</div>
@@ -35,13 +34,28 @@
 
     //2nd Properties: Very useful.
     //a. Selecting first element of a parent
-    console.log(parent.firstElementChild);
+    // console.log(parent.firstElementChild);
     //b.Selecting last elment of a parent
-    console.log(parent.lastElementChild);
+    // console.log(parent.lastElementChild);
 
     //2nd Target: Selecting Children as a childNodes
+        const dayOne = document.querySelector(".day");
+        // console.log(dayOne);
+        
+        //selecting paretn element from child element.
+        console.log(dayOne.parentElement);
+        console.log(dayOne.parentNode); //same return as above
+        //selecting next sibling of a element
+        console.log(dayOne.nextElementSibling); //return tuesday
+        //note: querySelector is a expensive opertion
+
+    //3rd Target: selectign child nodes
     console.log("NODES: ", parent.childNodes);
     //return: nodeList with 9 elements(5 line break + 4 elements);
-    //line break is also considerd
+    //childNodes/nodeList: is itself a very complex tree structure.
+    //dom is tree struture, every thing has a importance even a line break.
+    //line break is also considerd a node element(text node).
+    //browser only count one line break.
+    //every parent/element has childnodes.
 </script>
 </html>
