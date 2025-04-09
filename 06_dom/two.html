@@ -7,14 +7,41 @@
 </head>
 <body style="background-color: #212121; color: #fff;">
     <div class="parent">
+
         <div class="day">Monday</div>
+        
         <div class="day">Tuesday</div>
         <div class="day">Wednesday</div>
         <div class="day">Thursday</div>
     </div>
 </body>
 <script>
-    // 1st target: select parent element
-    doucmen
+    // 1st target: select parent element and look for values
+    const parent = document.querySelector('.parent');
+        // console.log(parent);
+
+    //1st Property: Accessing children of parent element: return html collection of child elements
+        // console.log(parent.children);
+        //accessing child
+        // console.log(parent.children[0].innerHTML);
+
+    //for loop is applicable to HTMLcollection. forloop can be applied to any array like structure.
+    //Applying loop
+    // for (let i = 0; i < parent.children.length; i++) {
+    //     console.log(parent.children[i].innerHTML);
+    // }
+    //Appying Styling
+    parent.children[0].style.color = "orange";
+
+    //2nd Properties: Very useful.
+    //a. Selecting first element of a parent
+    console.log(parent.firstElementChild);
+    //b.Selecting last elment of a parent
+    console.log(parent.lastElementChild);
+
+    //2nd Target: Selecting Children as a childNodes
+    console.log("NODES: ", parent.childNodes);
+    //return: nodeList with 9 elements(5 line break + 4 elements);
+    //line break is also considerd
 </script>
 </html>
