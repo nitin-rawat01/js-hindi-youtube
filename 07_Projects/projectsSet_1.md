@@ -40,3 +40,42 @@ buttons.forEach(function (button) {
 });
 
 ```
+
+## Project- 2
+```javascript
+// taking input from the user
+//perform calculation and display it.
+//select form because submit button is inside of it.
+// Calculate button is submit button ..submit the form.
+//event -> submit(not click because it is a form);
+const form = document.querySelector('form');
+//form submit in two ways-> get or post.
+//values goes to url or server.
+//we need to stop the form to send values to the server.preventing default behaviour.
+
+//this use case will give empty values
+// const height = parseInt(document.querySelector('#height').value);
+
+form.addEventListener('submit', function (e) {
+  e.preventDefault();
+  //getting values: Height and Weight
+  //select values when we enter the form(event); because we want to get the values when we click the Calculate button.taking value only after the event.
+  // values we received in string.
+
+  const height = parseInt(document.querySelector('#height').value);
+  const weight = parseInt(document.querySelector('#weight').value);
+  const result = document.querySelector('#results');
+
+  if (height === '' || height < 0 || isNaN(height)) {
+    result.innerHTML = `Please Give a Valid ${height}`;
+  } else if (weight === '' || weight < 0 || isNaN(weight)) {
+    result.innerHTML = `Please Give a Valid Height ${weight}`;
+  } else {
+    const bmi = (weight / ((height * height) / 10000)).toFixed(2);
+    //show the result
+    result.innerHTML = `<span>${bmi}</span>`;
+  }
+});
+
+
+```
