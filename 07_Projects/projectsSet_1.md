@@ -79,3 +79,22 @@ form.addEventListener('submit', function (e) {
 
 
 ```
+## Project 3 Solution Code
+
+```javascript
+//Getting clock
+const clock = document.getElementById('clock');
+
+// Show fix time
+// console.log(date.toLocaleTimeString());
+
+// Display digital clock
+//syntax: setInterval(funciton(){}, time(millisecond));
+
+setInterval(function () {
+  let date = new Date();
+  // console.log(date.toLocaleTimeString());
+  clock.innerHTML = date.toLocaleTimeString();
+}, 1000);
+
+```
