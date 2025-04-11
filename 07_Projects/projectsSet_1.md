@@ -7,7 +7,7 @@
 # Solution Code
 
 ## Project 1
-
+ 
 ```javascript
 //we need to select all the buttons and body
 const buttons = document.querySelectorAll('.button');
@@ -98,4 +98,126 @@ setInterval(function () {
 }, 1000);
 
 ```
+## Project 4
+```javascript
+// In form we got two options to submit a form: button(type="submit") and input(type="submit");
+
+//1st Step:Generating random number
+let randomNumber = parseInt(Math.random() * 100 + 1);
+
+//2nd Step: Gathering values
+const submit = document.querySelector('#subt');
+const userInput = document.querySelector('#guessField');
+const guessSlot = document.querySelector('.guesses');
+const remaining = document.querySelector('.lastResult');
+const lowOrHi = document.querySelector('.lowOrHi');
+const startOver = document.querySelector('.resultParas');
+
+const p = document.createElement('p');
+
+//startegies:
+//storing user guess and used it for display.
+let prevGuess = [];
+// number guesses made
+let numGuess = 1;
+//when numGuess becomes 10 we will disable the submit button.
+
+// game status
+let playGame = true;
+
+//defining game logic.
+//checking if user can play game
+if (playGame) {
+  submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    const guess = parseInt(userInput.value);
+    validateGuess(guess);
+  });
+}
+//1st function: validate user guess
+function validateGuess(guess) {
+  if (isNaN(guess)) {
+    alert('Please enter a valid number');
+  } else if (guess < 1) {
+    alert('Please enter a number more than 1');
+  } else if (guess > 100) {
+    alert('Please enter a number less than 100');
+  } else {
+    //if guess is valide
+    prevGuess.push(guess);
+    // if user can play game or not
+    if (numGuess === 11) {
+      displayGuess(guess);
+      displayMessage(`Game Over. Random Number was ${randomNumber}`);
+      endGame();
+    } else {
+      displayGuess(guess);
+      checkGuess(guess);
+    }
+  }
+}
+
+//check guess: low, high or match
+function checkGuess(guess) {
+  if (guess === randomNumber) {
+    displayMessage(`You Guess it right!`);
+    endGame();
+  } else if (guess < randomNumber) {
+    displayMessage(`Your guess is Too low`);
+  } else if (guess > randomNumber) {
+    displayMessage(`Your guess is Too high`);
+  }
+}
+
+//clean values, display guesses to the user, show remaining guess.
+//cleanUpGuess
+function displayGuess(guess) {
+  //updating input field to be empyt: clean up field
+  userInput.value = '';
+  guessSlot.innerHTML += `${guess}, `;
+  numGuess++;
+  remaining.innerHTML = `${11 - numGuess}`;
+}
+
+//Pass message.
+function displayMessage(message) {
+  lowOrHi.innerHTML = `<h2>${message}</h2>`;
+}
+// end game
+function endGame() {
+  userInput.value = '';
+  //preventing user to enter more guess
+  userInput.setAttribute('disabled', '');
+  p.classList.add('button');
+  //ref will be used in newGame();
+  p.innerHTML = '<h2 id = "newGame">Start New Game</h2>';
+
+  startOver.appendChild(p);
+  playGame = false;
+  newGame();
+}
+
+//start new game
+function newGame() {
+  const newGameButton = document.querySelector('#newGame');
+  newGameButton.addEventListener('click', function (e) {
+    //generating new random number
+    randomNumber = parseInt(Math.random() * 100 + 1);
+    //removing prev guess
+    prevGuess = [];
+    //restarting number of guess.
+    numGuess = 1;
+    guessSlot.innerHTML = '';
+    remaining.innerHTML = `${11 - numGuess}`;
+    //removing attribute from user.
+    userInput.removeAttribute('disabled');
+
+    //remove child
+    startOver.removeChild(p);
+    //turning on the game at last
+    playGame = true;
+  });
+}
+
+````
 
