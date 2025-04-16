@@ -21,6 +21,7 @@ sayMyName;
 // }
 
 //learning about return 
+//return keyword stops the execution of the funciton and return a value.
 function addTwoNumbers(number1, number2){ // number1 and number2 are parameter: input when writing function definition is called parameter.
     let result = number1 + number2;
     // console.log("Hitesh");
