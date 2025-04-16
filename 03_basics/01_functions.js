@@ -67,6 +67,7 @@ console.log( loginUserMessage("Hitesh")); //Hitesh will overwrite sam
 function caculateCartPrice(val1, val2, ...num1){ // rest operator: pack the inputs into a bundle
     return num1;
 }
+// note: if to input for num1 then it will show empty array
 console.log(caculateCartPrice(200, 300, 400, 500)); //output: [400, 500]
 
 //passing object in a function 
