@@ -41,7 +41,7 @@ function one(){
     two();
 }
 console.log('one is executed first');
-one(); //first one will executed than two() inside of one will execute.
+one(); //fi  will executed than two() inside of one will execute.
 
 // closure: child function can access the variable of parent function.
 // if-else scope
