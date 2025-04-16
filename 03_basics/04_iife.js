@@ -4,7 +4,7 @@
 // Why do need it?
 // For databas  e connection: file only for database connection, soon as a application start we want connection to a database, we use iife.
 // To prevent global scope population: prevent global variables from polluting function scope.
-// Note:  Variables defined inside an IIFE are not accessible from outside its scope which helps to avoid conflicts with other variables or functions (global scope pollution). Means IIFE keeps variables and functions private in it
+// Note:  Variables define         d inside an IIFE are not accessible from outside its scope which helps to avoid conflicts with other variables or functions (global scope pollution). Means IIFE keeps variables and functions private in it
 
 // Interview Question: What is iife-> immediately invoked function expression + prevent global scope pollution (due to global variable).
 
