@@ -2,7 +2,7 @@
 // An IIFEE is a function in javascript that is executed as soon as it is defined.
 
 // Why do need it?
-// For database connection: file only for database connection, soon as a application start we want connection to a database, we use iife.
+// For databas  e connection: file only for database connection, soon as a application start we want connection to a database, we use iife.
 // To prevent global scope population: prevent global variables from polluting function scope.
 // Note:  Variables defined inside an IIFE are not accessible from outside its scope which helps to avoid conflicts with other variables or functions (global scope pollution). Means IIFE keeps variables and functions private in it
 
