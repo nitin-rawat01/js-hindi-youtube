@@ -2,7 +2,7 @@
 //function: piece of code which do a specific task. create a package of our code..which we can use many times
 
 //This is definition of function 
-function sayMyName(){ //{}: scope of the function, we write definition of function inside scope
+function sayMyName(){
     console.log("H");
     console.log("I");
     console.log("T");
