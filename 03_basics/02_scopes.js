@@ -1,4 +1,5 @@
 // Scope start with: let, var and const
+//Scope:In JavaScript, scope defines the accessibility of variables, functions, and objects within a program
 //  {} -> curly braces is scope almost in every programing language.
 //Note: in object , {} they are object declaration/ object literal. {} curly braces are scope in fucntion , if-else etc.
 
