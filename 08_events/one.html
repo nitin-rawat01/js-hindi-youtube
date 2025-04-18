@@ -59,14 +59,14 @@
     //Event Propogation: two context: event bubbling and event capturing.
     //false -> event bubbling
     //true -> event capturing.
-document.getElementById('images').addEventListener("click", function(e){
-        console.log('Clicked Inside of the ul');
-    }, false);
-    document.getElementById('owl').addEventListener("click", function(e){
-       console.log('Owl Clicked');
-       // to stop bubbling 
-       e.stopPropagation();
-    }, false);
+// document.getElementById('images').addEventListener("click", function(e){
+//         console.log('Clicked Inside of the ul');
+//     }, false);
+//     document.getElementById('owl').addEventListener("click", function(e){
+//        console.log('Owl Clicked');
+//        // to stop bubbling 
+//        e.stopPropagation();
+//     }, false);
 
     // output for false -> first-> owl clicked and then "clicked inside of ul"
     // this event propogation is bubbling up. from inner element(img) to outer element(ul).
@@ -74,14 +74,31 @@ document.getElementById('images').addEventListener("click", function(e){
     // this event propogation is capturing. from outer element(ul) to inner element(img).
 
 // prevent default
-document.getElementById("google").addEventListener('click', function(e){
-    e.preventDefault(); // prevent the default nature of the element.
-    e.stopPropagation(); // stop event propogation of bubbling.
-    console.log('google clicked')
-}, false)
+// document.getElementById("google").addEventListener('click', function(e){
+//     e.preventDefault(); // prevent the default nature of the element.
+//     e.stopPropagation(); // stop event propogation of bubbling.
+//     console.log('google clicked')
+// }, false)
 
 
+// Removing photo on a click
+    document.querySelector('#images').addEventListener('click', function(e){
+    //    console.log(e.target); return element on which event occured
+    console.log(e.target.parentNode);
+    let removeIt = e.target.parentNode;
+    //1st method to remove
 
+    // removeIt.remove(); // drawback: if we click li then it will remove ul
+    if(e.target.tagName === "IMG"){
+        console.log(e.target.id);
+    let removeIt = e.target.parentNode;
+    removeIt.remove();
+
+    }
+    //2nd method
+    // removeIt.parentNode.removeChild(removeIt);
+
+    }, false)
 
 </script>
 </html>
