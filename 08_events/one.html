@@ -5,7 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>html Events</title>
 </head>
-<body>
-    
+<body style="background-color: #414141; color: aliceblue">
+    <h2>Amazign image</h2>
+    <div >
+        <ul id="images">
+            <li><img width="200px" id="photoshop" src="https://images.pexels.com/photos/3561339/pexels-photo-3561339.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="photoshop"></li>
+            <li><img width="200px" id="japan" src="https://images.pexels.com/photos/3532553/pexels-photo-3532553.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="river" src="https://images.pexels.com/photos/3532551/pexels-photo-3532551.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" ></li>
+            <li><img width="200px" id="prayer" src="https://images.pexels.com/photos/2522671/pexels-photo-2522671.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt=""></li>
+            <li><a style="color: aliceblue;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+   </div>
 </body>
+<script>
+    // JavaScript Events(code) runs sequentially but there are few exceptions 
+    //JavaScript is sequentially run language
+    //But sometime we ignore this sequential behaviour of the lang..like in asycnhronous were we divert  the flow.
+    //Browsers Events are exeception to the rule of sequentially run lang.
+    //Browsers Event-> invoke on some activity like mouse movement, key press, mouse click, drag and drop etc.
+
+    // Method to handle browser events: Directly inside of html element. not recommended.
+    // <li><img width="200px" id="owl" src="https://images.pexels.com/photos/3532552/pexels-photo-3532552.jpeg?auto=compress&cs=tinysrgb&w=1600&lazy=load" alt="" onclick="alert('owl')"></li>
+    //not a feasible approach ..creates problem when code base becomes big
+    //note: this same approach in react is diff because in react the code is feasible.
+
+
+
+
+    
+</script>
 </html>
