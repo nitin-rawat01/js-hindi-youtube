@@ -29,6 +29,25 @@ console.log(accountEmail);
 //using table method of console
 //table() This method allows us to log data to the console in the form of tables. 
 console.table([accountId, accountEmail, accountPassword, accountCity, accountState]);
+//About console.table: The console.table() static method displays tabular data as a table.
+//syntax: console.table(data, columns*) *: optional
+// data: The data to display. This must be either an array or an object
+// item(array) / property (object) -> row
+// 1st column: index / property names
+let indianTeam =['sachin', 'dhoni', 'rohit'];
+let ausTeam = ['bretlee' , 'jack', 'don'];
+let player = {
+    name: 'dhoni',
+    team: 'india',
+    position: 'captain'
+}
+// using table method of console
+// console.table([accountId,accountEmail, accountName]);
+console.table(player);
+
+
+
+
 
 /* 
 Prefer not use var
