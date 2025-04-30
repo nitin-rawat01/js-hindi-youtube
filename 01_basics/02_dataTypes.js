@@ -65,13 +65,12 @@ When strict mode is enabled, the JavaScript engine enforces additional constrain
 //you can set either entire program to strict mode or scope it to specific function 
 //"use strict" at the top of script file or at function body
 //"use strict":prevents
-// prevent using variable property or an object without declaring it is not allowed
+// prevent using variable , or an object without declaring it is not allowed
+
 //deleting a variable, funciton, or an argument, is not allowed 
     // x = 3.14
     //delete x; cause an error
-//defining a property more than once is not allowed
-    // eg var x = {p1: 10, p1:20}; cause an error.
-    
+
 //duplicating a parameter name,
 //function (x,x); cause an error
 
