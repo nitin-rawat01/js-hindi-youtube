@@ -32,7 +32,7 @@ let score = "hitesh"
 
     /* summar: basic conversion
  "33" => 33
- "33abc" => value: NaN, type: Number
+ "33abc", undefinded, "string" => value: NaN, type: Number
  true/false => 0/1
 */
 
