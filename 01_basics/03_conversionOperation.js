@@ -153,7 +153,7 @@ console.log(gameCounter); //101
     //  x++; x is return first and then x is increment
 
 //pre fix: increment first and then value(after increment) is return.
-//increment operator applied to reference eg variable does not applied to direct value like ++10.
+//increment operator applied to reference eg variable, does not applied to direct value like ++10.
 //The increment operator can only be applied on operands that are references (variables and object properties; i.e. valid assignment targets). ++x itself evaluates to a value, not a reference, so you cannot chain multiple increment operators together.
 
 
