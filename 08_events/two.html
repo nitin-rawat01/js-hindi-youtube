@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Chai aur Code</h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayHitesh = function(){
+        console.log("Hitesh")
+    }
+    const changeText = function(){
+        document.querySelector('h1').innerHTML = "best JS series";
+    }
+    const changeMe =  setTimeout(changeText, 1000);
+    // usecase in real world: pop-up ads, drop down;
+
+    // clearTimeout need reference of the setTimeout to be removed
+    document.querySelector('#stop').addEventListener('click', function(){
+        clearTimeout(changeMe);
+        console.log('stop')
+    });
+   
+
+
+
+</script>
+</html>
+<!-- Notes
+setTimeout and setInterval: not part of core javascript, they are provided by the browser.
+They are functions provided by the browser
+method hi hai lakin api ko call krta hai?
+
+-->
