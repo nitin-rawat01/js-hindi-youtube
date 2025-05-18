@@ -221,3 +221,71 @@ function newGame() {
 
 ````
 
+# Project 5 solution
+
+```javascript
+const insert = document.getElementById('insert');
+
+window.addEventListener('keydown', function (e) {
+  // copy table from w3 school
+  insert.innerHTML = `
+  <div class="color">
+  <table>
+  <tr>
+    <th>key</th>
+    <th>keycode</th>
+    <th>code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+
+</table>
+  
+  </div>
+  `;
+});
+
+```
+# Project 6 Solution
+
+```javascript
+// generate a random color
+const randomColor = function () {
+  const hex = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += hex[Math.floor(Math.random() * 16)];
+  }
+  return color;
+};
+let intervalId;
+
+const startChangingColor = function () {
+  if (!intervalId) {
+    // intervalId === null
+    intervalId = setInterval(changeBgColor, 1000);
+  }
+  function changeBgColor() {
+    document.body.style.backgroundColor = randomColor();
+  }
+};
+const stopChangingColor = function () {
+  clearInterval(intervalId);
+  // clearing up the memory space
+  intervalId = null;
+};
+
+document.querySelector('#start').addEventListener('click', startChangingColor);
+document.querySelector('#stop').addEventListener('click', stopChangingColor);
+
+// We are checking intervalId is not null then only start the interval otherwise it would create the multiple instances of the setInterval which would change the background color much faster and the stop button would not be able to clear all intervals if initially we have clicked on start button multiple times and then we click on stop button.
+// we are setting interval to none to save memory space and checking intervalID for the problem you mentioned in your comment.
+// I think the 'Stop' button not 'seemingly' working at 29:10 is not because of indexId value being changed from null to the reference of setInterval() but because of that prior to clicking the 'Stop' button, the 'Start' button was clicked multiple times hence multiple setInterval() methods are running simultaneously. The indexId has the reference of only the last setInterval() and the references of the previously started intervals have been lost. Clicking on 'Stop' clears that process but the other prior started setIntervals continue to run hence it appears that 'Stop' did not work at all. The check if(!intervalId) ensures that if an interval is already executing, another interval should not start. Great series overall! Enjoyed watching and doing the projects myself alongside
+
+
+
+```
+
