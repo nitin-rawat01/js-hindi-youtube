@@ -1,4 +1,10 @@
-// use modern syntax of string: use template literals when using string
+// String in javaScript
+// Strings are useful to hold data that can be represented in text form.
+// Creating string
+// string can be created as primitive, from string literal('', "", ``) or as objects, using the String() contructor.
+// -------------------------------------
+
+// creating string with "" or '' quote.
 //no difference between using single or double quote.
 const name = "hitesh" //declaring string //behind the scene: invoke object
 const repoCount = 50
@@ -6,13 +12,22 @@ const repoCount = 50
 //concatenate string in javascript
 // console.log(name + repoCount + " Value") // not recommended: old method
 
-//Modern Way of string: called string interpolation
+// -----------------------------------
+// use modern syntax of string: use template literals when using string.
+//Modern Way of string: called string interpolation:
+//Template Strings use back-ticks (``) rather than the quotes ("") to define a string:
 console.log(`Hello my name is ${name} and my repo count is ${repoCount}`); //modern method 
 //back tick -> string interpolation ->use placeholder(inject variable)
 
+//Interpolation
+// Template string provide an easy way to interpolate variables and expressions into strings.
+// The method is called string interpolation.
+// interpolate: to add something into a piece of writing. 
+
+
 //second method for declaring string
 //use javascript object
-const gameName = new String('Hitesh-hc'); //new-> create object, String ->contructor
+const gameName = new String('Hitesh-hc'); //new-> create object, String ->contructor // A string object
 //same value ...behind the scene- invoke object.
 // also run this on chrome dev tools
 console.log(gameName); //return-> String{'hitesh'} 0:h ,1:i(key:value pair) , length property , lots of diff method inside prototye, type: object.
@@ -26,7 +41,7 @@ console.log(gameName.__proto__); //accessing prototype of object //return -> {} 
 //String Methods
 console.log(gameName.toUpperCase()); //HITESH original string doesnot change because reason mention in stack and heap video
 
-//to find which char is at which position //pass number
+//to find which char is at which posi   tion //pass number
 console.log(gameName.charAt(2)); //t at second index
 
 //to find position of char
