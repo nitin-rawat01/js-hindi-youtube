@@ -1,3 +1,8 @@
+// Number values represent floating-point numbers like 37 or -9.25.
+// The Number constructor contains constants and methods for working with numbers.
+// Values of other types can be converted into number by using Number function.
+
+
 //define number in javascript
 //in js number -> integer and float
 const score = 400 //js automatically detect this as number
@@ -95,7 +100,7 @@ console.log((Math.random()*10) + 1);
 const min = 10;
 const max = 20;
 
-console.log(Math.floor(Math.round()* (max - min +1) + min)); //+1 avoid 0 value
+console.log(Math.floor(Math.random()* (max - min +1) + min)); //+1 avoid 0 value
 //breakdown 
 //some time we define min and max
 //max-min give us the range in this case is 10
