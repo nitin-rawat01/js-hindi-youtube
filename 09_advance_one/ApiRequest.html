@@ -5,9 +5,46 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-<body>
+<body style="background-color: #212121; color:#fff;">
+Value   State 	                    Description
+    0 	UNSENT  	        Client has been created. open() not called yet.
+    1 	OPENED 	            open() has been called.
+    2 	HEADERS_RECEIVED 	send() has been called, and headers and status are available.
+    3 	LOADING 	        Downloading; responseText holds partial data.
+    4 	DONE 	            The operation is complete.
     
 </body>
+
+<script>
+    const requestURL = "https://api.github.com/users/hiteshchoudhary";
+    // xmlhHTTPRequest(): almost class/method, return object, purpose: request send , data receive
+    const xhr = new XMLHttpRequest();
+    // console.log(typeof xhr); object
+
+    // open(): create request, available: after creating xmlhttprequest object
+    // 2 parameter: method and url;
+    xhr.open('GET', requestURL ); // request is created 
+    // open() method has been invoked. During this state, the request headers can be set using the setRequestHeader() method and the send() method can be called which will initiate the fetch.
+
+    // function execute every time state change
+    xhr.onreadystatechange = function (){
+        console.log(xhr.readyState);
+        if(xhr.readyState === 4){
+            // this -> current context
+            // response from url is string most of the time
+            // converting string(JSON)  into object
+            const data = JSON.parse(this.responseText);
+            console.log(typeof data); //object
+            
+
+        }
+    }
+    console.log(xhr.readyState);
+   
+    xhr.send(); // open is called
+   
+
+</script>
 </html>
 
 <!-- 
