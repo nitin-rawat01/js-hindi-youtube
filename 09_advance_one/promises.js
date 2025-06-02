@@ -67,11 +67,77 @@ promiseThree.then(function(user){
 // fourth promise
 const promiseFour = new Promise(function(resolve, reject){
     setTimeout(function(){
+        let error = false;
+        if(!error){
+            resolve({username:"hitesh", password: "123"});
+        } else{
+            reject('Error! Something went wrong')
+        }
+    }, 2000)
+})
+//consuming promise
+// chaining of .then
+const username = promiseFour.then((user) => {
+    console.log(user);
+    return user.username;
+}).then((username) => {
+    console.log(username);
+}).catch((error) => {
+    console.log(error);
+}).finally(() => console.log('Promise is either resolve or rejected'));
+console.log('username: ', typeof username); // return -> promise object
+
+//promise five
+const promiseFive = new Promise(function(resolve, reject){
+     setTimeout(function(){
         let error = true;
         if(!error){
-            resolve({});
+            resolve({username:"javaScript", password: "123"});
+        } else{
+            reject('Error! JS went wrong')
         }
     }, 2000)
 })
 
+// async await: same as .then .catch but wait for asynchronous operation to be completed, if operation is not completed then it gives error
 
+async function consumePromiseFive(){
+   try {
+    const response =  await promiseFive; // promise object (eventual completion of object )
+   console.log(response);
+   } catch (error) {
+    console.log(error);
+   }
+}
+consumePromiseFive();
+
+
+// handling api with async await and .then .catch
+// async function getAllUsers(){
+//   try {
+//     // fetch: object return -> promise
+//     const response =  await fetch('https://jsonplaceholder.typicode.com/users');
+//     //converting into json: it takes time to convert into json..this is a asyn operation
+//     const data = await response.json();
+//     console.log(data);
+    
+//   } catch (error) {
+//     console.log("E:", error)
+//   }
+// }
+// getAllUsers();
+
+
+// .then .catch
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response)=>{
+    return response.json();
+} )
+// first .then will complete only then next .then will run
+.then((data) => {
+    console.log('last .then')
+        console.log(data);
+}).catch((error) => console.log(error));
+
+// another api: https://jsonplaceholder.typicode.com/users
+// promise: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise
