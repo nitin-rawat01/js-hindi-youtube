@@ -33,6 +33,7 @@ The constructor method is a special method for creating and initializing an obje
 
 ## parts of OPP
 - Object literal (literally): i literally mean to 
+   " ek object bol rha hun ..to ek object hi le rha hun"
 
 
 -Constructor function 
