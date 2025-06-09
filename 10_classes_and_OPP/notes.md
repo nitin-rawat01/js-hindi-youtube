@@ -43,7 +43,87 @@ The constructor method is a special method for creating and initializing an obje
 
 
 ## 4 pillars of OPP
-Abstraction:  hide the details eg: fetch
-Encapsulation: wrap up the data.
-Inheritance: 
-Polymorphism: 
+# Encapsulation- Hiding the Data
+  Definition: Wrapping data (variables) and methods (functions) together into a single unit (class), and hiding internal details from the outside world.
+Purpose: To protect the object’s internal state and only expose what’s necessary.
+
+Example
+  class Person {
+    #age; // private field
+    constructor(name, age){
+        this.name = name;
+        this.#age = age; // age will not show
+    }
+    greet(){
+         console.log(`Hello My Name is manoj ${this.name} your age is ${this.#age}`)
+    }
+}
+
+const student = new Person('Manoj', 34);
+console.log(student);
+student.greet();
+
+# Inheritance: Reusing Code
+  Definition:  One class (child) can inherit properties and methods from another class (parent).
+  Purpose: To promote code reuse and establish a natural hierarchy.
+  examples:
+  class Animal {
+    speak(){
+        console.log("Animals speaks");
+    }
+}
+
+// Inheritance
+    class Dog extends Animal {
+        bark(){
+            console.log("Dogs barks");
+        }
+    }
+
+const d = new Dog();
+
+console.log(d);
+germanSheperd.bark();
+germanSheperd.speak();
+
+
+# Polymorphism: Many Forms
+  Defination: The same method name beahves differently based on the object calling it.
+  Purpose: To allow different classes have to define their own version of a method.
+  Example:
+  class Animal {
+    makeSound(){
+        console.log("Some Sound");
+    }
+}
+
+// Inheritance
+    class Dog extends Animal {
+        makeSound(){
+            console.log("Woof");
+        }
+    }
+    class Cat extends Animal {
+        makeSound(){
+            console.log("Meow");
+        }
+    }
+
+
+const animals = [new Cat(), new Dog()];
+
+animals.forEach(a => a.makeSound());
+
+# Abstraction: Hiding Complexity
+  Definition: Showing only Essential features and hiding complex implementation details.
+  Purpose: To reduce complexity and focus on what an object does instead of how it does it.
+  Example:
+  class Car {
+  startEngine() {
+    // Complex logic hidden from the user
+    console.log("Engine started");
+  }
+}
+
+const myCar = new Car();
+myCar.startEngine(); // User doesn't need to know the internal process
