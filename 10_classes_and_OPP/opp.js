@@ -13,7 +13,7 @@ const user = { // literally ek object
     getUserDetails: function () {
         console.log('Got User details from Database');
         //  console.log(`username: ${username}`); // error: username is not defined
-        // Reason: it does not knwo about which username we are talking about
+        // Reason: it does not know about which username we are talking about
         // function is placed on call stack..created a function execution context...function does not know about user variable..to get values outside of the function execution cotenxt we use this keyword.
         console.log(`username: ${this.username}`); 
         console.log(this)
