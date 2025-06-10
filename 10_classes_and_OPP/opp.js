@@ -60,7 +60,7 @@ function User(username, loginCount, isLoggedIn){
 // creating object 
 // const userOne = User('hitesh', 12, true);
 // const userTwo = User('chai aur code', 11, true); // this will overwrite the value of userOne
-// console.log(userOne);
+// console.log(userOne); // userTwo values are stored in userOne
 
 const userOne = new User('hitesh', 12, true);
 const userTwo = new User('chai aur code', 11, true);
