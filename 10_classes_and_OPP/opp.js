@@ -1,4 +1,4 @@
-// Video: Object Oriented In JavaScript
+// Video: Object Oriented In JavaScript (1st video)
 // Object Literal (literally ek object banana hai)
 // In javascript this is base unit.
 // Object literal is the basic unit.

@@ -1,4 +1,4 @@
-// Js behaviour: prototypial behaviour.
+// Js behaviour: prototypial behaviour. (2nd video)
 // JavaScript default behaviour: prototypial behaviour.
 
 // new, this , classes, prototype inheritance: prototype behaviour
