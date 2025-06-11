@@ -50,6 +50,7 @@ const tea = new createUser("tea", 250);
 chai.printMe();
 
 /*
+new keyword functionality:
 
 Here's what happens behind the scenes when the new keyword is used:
 
