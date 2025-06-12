@@ -69,6 +69,7 @@ console.log(TeachingSupport.name);
 let anotherUsername = "chai aur code      ";
 String.prototype.trueLength = function (){
     console.log(`${this}`);
+    // this -> referece hai current context ka..jo bula rha hai.
     console.log(`True length is ${this.trim().length}`);
 }
 anotherUsername.trueLength();
