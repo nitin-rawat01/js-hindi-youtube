@@ -1,4 +1,4 @@
-// Prototype in Javascript
+// Prototype in Javascript: second video part two
 // goal: 
 let myName = "hitesh     ";
 let myChannel = "chai"
