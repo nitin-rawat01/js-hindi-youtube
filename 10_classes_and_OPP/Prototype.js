@@ -59,7 +59,7 @@ const TAsupport = {
 }
 // information exchange: linking objects
 // directly access this property: __proto__
-
+// Teacher can access all the properties of the User.
 Teacher__proto__ = User;
 // This proto typial inheritance : this how you can access others properties
 // Modern syntax
