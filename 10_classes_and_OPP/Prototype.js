@@ -49,7 +49,7 @@ const Teacher = {
 const TeachingSupport = {
     isAvailable: false
 }
-
+// information sharing between two objects: linking two objects
 const TAsupport = {
     makeAssignment: 'JS Assignment',
     fullTime: true,
