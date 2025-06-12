@@ -54,6 +54,7 @@ const TAsupport = {
     makeAssignment: 'JS Assignment',
     fullTime: true,
     // taking reference from TeachingSupport.
+    // __proto__: this is a property inside of the prototype
     __proto__: TeachingSupport 
 }
 // information exchange: linking objects
