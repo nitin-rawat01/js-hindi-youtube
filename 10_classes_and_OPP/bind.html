@@ -9,10 +9,41 @@
     <button>Button Clicked</button>
 </body>
 <script>
+    //business requirement
+    //1. create new object from React class
+    //2. reference of button
+    //3. handleclick function 
+    // behind the scene
+   
     class React {
         constructor(){
             this.library = "React"
+            this.server = "https://localhost:3000"
+            // requirement
+            // taking reference of all the elements
+         
+            document
+            .querySelector('button')
+            .addEventListener('click', this.handleClick.bind(this));
+            // we bind the object(this) created from react class
+
+            // this -> without this : hanldeClick is not defined
+            // this -> refers to this class?
         }
+           handleClick =   function (){
+            console.log("button clicked");
+            console.log(this); // refers to the button
+            console.log(this.server); // undefined
+        }
+        
     }
+    const app = new React();
+   
+    // First Explanation 
+    // Without the bind method, an event listener only has access to the context (or this) of the element that triggers the event (like a button in this case). So, in your example, the handleClick event listener only has the button's context (this refers to the button itself).
+    // Using the bind method, we can set the this context to a different object, allowing us to access the context where the event listener was created, not just the button's context."
+    
+    // Second Explanation 
+    // let me explain if anybody has some confusion so remeber this line ""When used in event handlers, this refers to the element that triggered the event.""  so here eventhough we create an instance of react class using new keyword and store that new created object in the app variable then that object is having server and library properties and handleClick() fn but when when we are calling the fn handle click inside addEventListener() then what happen is actually the element button is calling the function handleClick() so here this refers to the button element not the context of object created using class React so here It is priniting <button>...</button > but when we use bind() then we are actually binding the context of the object created using class React.Please like if you like my explaination....
 </script>
 </html>
