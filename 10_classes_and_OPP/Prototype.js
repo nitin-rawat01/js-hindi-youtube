@@ -63,6 +63,7 @@ const TAsupport = {
 Teacher__proto__ = User;
 // This proto typial inheritance : this how you can access others properties
 // Modern syntax
+// Object.setPrototypeOf(obj, prototype)
 Object.setPrototypeOf(TeachingSupport, Teacher);
 console.log(TeachingSupport.name);
 
