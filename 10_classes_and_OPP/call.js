@@ -32,6 +32,7 @@ function createUser(username, email, password){
 }
 
 // call keyword: Calls a method of an object, substituting another object for the current object.
+// .call() gives the function a custom execution context where this points to the right object.
 
 const chai =new createUser("chai", "chai@fb.com", "12334");
 console.log(chai)
