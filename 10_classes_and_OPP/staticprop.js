@@ -29,5 +29,5 @@ class Teacher extends User {
 const iphone = new Teacher('iphone', 'i@phone.com');
 console.log(iphone);
 iphone.logMe();
-console.log(iphone.createId());
+console.log(iphone.createId()); // cannot access createId();
 // note: static -> no object and class can use or inherit the properties /funcitons.
