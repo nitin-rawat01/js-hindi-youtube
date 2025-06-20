@@ -14,6 +14,7 @@ class User {
 class Teacher extends User{
     // overwriting User constructor
     constructor(username, email, password){
+        // super call is must.
         super(username)
         this.email = email;
         this.password = password;
