@@ -41,3 +41,39 @@ console.log(chai instanceof Teacher);
 console.log(chai instanceof User);
 
 
+// About super keyword
+// super keyword serves two primary purpose within the context of the class inheritance:
+
+// Calling the Parent Class's Constructor: When a derived class extends a base class, its constructor must call the parent class's constructor using super(). This ensures that the parent class's initialization logic is executed, and its properties are correctly set up before the derived class adds its own specific properties.
+class Person {
+     constructor(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+}
+
+class Student extends Person {
+    constructor(name, age, studentId){
+        super(name, age); //// Calls the constructor of the Person class
+        this.studentId = studentId;
+    }
+
+}
+const newStudent = new Student('hitesh', 16, 12342);
+
+
+// Accessing the Parents Class Methods and Properties: The super keyword can also be used to access the methods and properties define in the parent class from within the derived class.This is particularly useful when a derived class wants to extend or modify the behavior of a parent method while still leveraging the original implementation.
+
+class Animals {
+    speak(){
+        return 'makes a sound';
+    }
+}
+
+class Dog extends Animals {
+    speak(){
+        return super.speak() + ' and barks'; // Calls the speak method of the Animal class
+    }
+}
+const myDog = new Dog();
+console.log(myDog.speak());
