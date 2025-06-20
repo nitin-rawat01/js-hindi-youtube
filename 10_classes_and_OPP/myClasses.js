@@ -26,7 +26,7 @@
 // console.log(chai.encryptPassword());
 // console.log(chai.changeUsername());
 
-// behind the scene
+// behind the scene: if we dont have class syntax
 // User -> function but can behave like object
 function User(username, email, password){
         this.username = username;
