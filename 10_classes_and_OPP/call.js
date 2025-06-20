@@ -37,3 +37,18 @@ function createUser(username, email, password){
 const chai =new createUser("chai", "chai@fb.com", "12334");
 console.log(chai)
 // hamra current execution context kisi or function ko pass kr deta hai.
+
+
+// In JavaScript, the call() method is a predefined function available on all Function instances. It allows you to invoke a function with a specified this value and arguments provided individually.
+// Setting this context:
+// The primary purpose of call() is to explicitly set the this value within the function being called. This is particularly useful when borrowing methods from one object to be used with another, or when you need to control the this context in scenarios where it might otherwise be implicitly determined.
+
+//syntax: function.call(thisArg, arg1, arg2, ..., argN)
+// thisArg: The value to be used as this when the function is executed. If thisArg is null or undefined, this will default to the global object (e.g., window in browsers, or global in Node.js) in non-strict mode, and undefined in strict mode.
+
+// Common use cases:
+
+    // Function borrowing: Reusing a method defined on one object for another object.
+    // Controlling this: Explicitly defining the this context for a function, especially in event handlers or callback functions.
+    // Applying array-like objects to functions: While apply() is more common for this, call() can also be used if the number of arguments is known and fixed.
+
