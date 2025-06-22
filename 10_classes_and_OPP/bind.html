@@ -21,6 +21,11 @@
             this.server = "https://localhost:3000"
             // requirement
             // taking reference of all the elements
+             this.handleClick =   function (){
+            console.log("button clicked");
+            console.log(this); // refers to the button
+            console.log(this.server); // undefined
+        }
          
             document
             .querySelector('button')
@@ -29,12 +34,9 @@
 
             // this -> without this : hanldeClick is not defined
             // this -> refers to this class?
+          
         }
-           handleClick =   function (){
-            console.log("button clicked");
-            console.log(this); // refers to the button
-            console.log(this.server); // undefined
-        }
+           
         
     }
     const app = new React();
