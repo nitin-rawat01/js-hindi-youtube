@@ -1,4 +1,4 @@
-// Getter and Setter in JavaScript
+// Getter and Setter in JavaScript: Part 1
 // In JavaScript, getters and setters are special methods used to control access to an object's properties. They allow you to define how a property is read (getter) and how it is written (setter), providing a layer of abstraction and enabling advanced logic or validation.
 // Some time we need fine grained control.
 // To restrict or customize objects properties.

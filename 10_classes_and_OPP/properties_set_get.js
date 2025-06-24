@@ -1,3 +1,4 @@
+// Getter and Setter in JavaScript: Part 2
 // defining setter and getter through properties
 function User(email, password){
     this._email = email;

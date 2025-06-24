@@ -1,3 +1,4 @@
+// Getter and Setter in JavaScript: Part 3
 const User = {
     _email: 'h@hc.com',
     _password: "abc",
