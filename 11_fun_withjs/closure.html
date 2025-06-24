@@ -1,0 +1,97 @@
+<!-- Closure: A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). -->
+ <!-- In other words, a closure give a function access to its outer scope. In javascript, closures are created every  time a function is created, at function creation time-->
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Closure</title>
+  </head>
+  <body style="background-color: #313131;">
+    <button id="orange">Orange</button>
+    <button id="green">Green</button>
+  </body>
+  <script>
+    // Lexical Scoping
+    // function init() {
+    //     let name = "Mozilla"; // name is a local variable created by init
+    //     function displayName() {           
+    //         // displayName() is the inner function, that forms a closure
+    //         console.log(name); // use variable declared in the parent function
+    //         }
+    //         // function define and run in init() function 
+    //         displayName();
+    //     }
+        
+    // init();
+    // note: init() creates a local variable called name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer scopes, displayName() can access the variable name declared in the parent function, init(). This is lexical scoping.
+    // special case Scenario: lexical scoping  
+
+    // function outer(){
+    //     let username = 'hitesh';
+    //     // console.log(secret);outer functions cannot access variables of inner function
+    //     function inner(){
+    //         let secret = "my123"
+    //         console.log("inner function ", username); // username is available. 
+    //     }
+    //     function innerTwo(){
+    //         console.log("innerTwo function ", username); // username is available. 
+    //         // console.log(secret);
+
+    //     }
+    //     inner();
+    //     innerTwo();
+    //     // Note: outer function execution 
+    //     // note: inner function has its own execution context.
+    //     // note: but outer and inner functions are sharing memory.
+    //     // note: so inner function can access all the variables of outer function.
+    //     // note: inner functions can not shares variables 
+    //     // note: outer functions cannot access variables of inner function.
+    // }
+    // outer();
+    // console.log("TOO OUTER", username); // username not available outside of the function scope.
+// In short: inner function ke pas outer function ke scope ka access hota.
+
+// Closure In JavaScript
+// function scope kab tak rheta hai..jab tak wo execute hota hai...
+// ...agr function ka scope hi gaya to lexical scoping kaise chali gi ..kyon ki jab tak outer function tha tabhi tek inner function ko mil rha tha..outer function hi gayab ho gya to kaise access mile ga -> clousre.
+    function makeFunc() {
+    const name = "Mozilla";
+    function displayName() {
+        console.log(name);
+    }
+    return displayName; // we are not just returning displayName ..we are also returning outer function scope if it exist..because of lexical scoping.
+    // returning lexical scope of displayName..puri memory share hoti hai na ki function ka execution context.
+    }
+
+    const myFunc = makeFunc(); // function ka scope gayab.
+    // makeFunc ka execution context hatta diya ..lakin memory ka role ajata hai.
+    //memory ke reference ka role
+    // closure: sirf function return nhi hota ..uska pura scope return hota hai...lexical scope
+    myFunc();
+
+
+
+  </script>
+  <script>
+   
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor  = "orange";
+    // }
+    // document.getElementById("green").onclick = function () {
+    //     document.body.style.backgroundColor  = "green";
+    // }
+
+    function clickHandler(color) {
+        // document.body.style.backgroundColor = `${color}`
+        return function () {
+        document.body.style.backgroundColor = `${color}`
+        }
+        // return lexical scope
+    }
+
+    document.getElementById('orange').onclick = clickHandler('orange');
+    document.getElementById('green').onclick = clickHandler('green');
+    // // excepting function , get: function call
+  </script>
+  </html>
