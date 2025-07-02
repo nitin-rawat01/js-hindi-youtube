@@ -4,3 +4,16 @@ Incorrect Data: The most common outcome, where the final value of a shared resou
 Inconsistent UI: User interfaces that flicker, display outdated information, or behave unexpectedly.
 
 Hard-to-Debug Bugs: Race conditions are notoriously difficult to reproduce and debug because they depend on timing and order, which are often non-deterministic.
+
+How to Prevent Race Condition:
+While JavaScript doesn't have traditional multi-threading locks, you can manage race conditions using these strategies:
+
+1. Promises and async/await for Sequential Execution:
+If the order of operations truly matters, ensure they execute sequentially using await.
+2. Debouncing and Throttling:
+3. State Machines/Finite Automata:
+4. Cancellation Tokens/Aborting Controllers (for fetch):
+When dealing with fetch requests, you can use AbortController to cancel previous requests if a new one is initiated, ensuring only the latest request's data is used.
+
+5. Mutex-like Structures (Conceptual):
+While JavaScript doesn't have built-in mutexes, you can implement a conceptual "lock" using flags or queues to ensure only one asynchronous operation modifies a shared resource at a time.
