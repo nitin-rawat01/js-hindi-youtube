@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="message"></p>
+    <button onclick="startUpdating()">Start Updating</button>
+    <script>
+        function updateMessage(msg, delay){
+            return new Promise(resolve => {
+                setTimeout(() => {
+                    document.getElementById('message').textContent = msg;
+                      console.log(`Message updated to: "${msg}"`);
+                      resolve();
+                }, delay)
+            })
+        }
+        async function startUpdating(){
+            await Promise.all([
+                updateMessage('Loading Message from API A', 1000),
+                updateMessage('Loading Message from API B', 500)
+            ]);
+            console.log("All updates attempted.");
+        }
+    </script>
+</body>
+</html>
+<!-- In this case, the message from "API B" will likely overwrite "API A" because it has a shorter delay, even if "API A" was initiated first. The final message displayed depends on which setTimeout resolves last. -->
