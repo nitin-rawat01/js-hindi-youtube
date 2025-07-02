@@ -1,0 +1,6 @@
+Consequences of Race Conditions:
+Incorrect Data: The most common outcome, where the final value of a shared resource is not what was expected.
+
+Inconsistent UI: User interfaces that flicker, display outdated information, or behave unexpectedly.
+
+Hard-to-Debug Bugs: Race conditions are notoriously difficult to reproduce and debug because they depend on timing and order, which are often non-deterministic.
