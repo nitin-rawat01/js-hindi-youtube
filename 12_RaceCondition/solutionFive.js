@@ -25,5 +25,6 @@ async function processData(data){
 processData("item 1");
 processData("item 2");
 processData("item 3");
+processData("item 4");
 
 
