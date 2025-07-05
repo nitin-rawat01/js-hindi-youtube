@@ -12,9 +12,9 @@ async function withdraw(amount){
 }
 
 async function runTransactions() {
-     withdraw(70);
-     withdraw(50);
-     withdraw(50);
+    await withdraw(70);
+    await withdraw(50);
+    await withdraw(50);
 
     console.log(`Final balance: ${balance}`);
 }
