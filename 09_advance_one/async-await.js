@@ -2,6 +2,7 @@
 // async before function means one simple thing: a function always returns a promise.  Other values are wrapped in a resolved promise automatically. 
 // For instance, this function returns a resolved promise with the result of 1; let’s test it:
 // async
+
 async function f(){
     return 1;
 }
@@ -17,6 +18,9 @@ console.log(newF()); // promise, state: pending/fullfilled
 // So, async ensures that the function returns a promise, and wraps non-promises in it
 
 // Await: works only inside async function : The keyword await makes JavaScript wait until that promise settles and returns its result.
+// The await operator is used to wait for a Promise and get its fulfillment value.It can only be used inside an async function or at the top level of a module.
+// syntax:
+// await expression; expression -> A Promise, a thenable object, or any value to wait for.
 
 async function thirdFunc(){
     let promise = new Promise((resolve, reject) => {
@@ -52,16 +56,31 @@ async function showAvatar(){
     console.log( githubResponse)
     
     // creating img element and storing img .
-    let img = document.createElement('img');
-    img.src = githubUser.avatar_url
-    img.className = "promise-avatar-example";
+    // let img = document.createElement('img');
+    // img.src = githubUser.avatar_url
+    // img.className = "promise-avatar-example";
 
     //wait for 3-sec 
-    await Promise((resolve, reject) => setTimeout(resolve, 3000));
+    await new Promise((resolve, reject) => setTimeout(resolve, 3000));
     
-    img.remove();
+    // img.remove();
 
     return githubUser;
-    
 }
 showAvatar();
+// Modern browsers allow top-level await in modules. In modern browsers, await on top level works just fine, when we’re inside a module. 
+
+let response = await fetch('https://api.github.com/users/hiteshchoudhary');
+let user = await response.json();
+
+console.log(user);
+
+// If we’re not using modules, or older browsers must be supported, there’s a universal recipe: wrapping into an anonymous async function.
+
+(async () => {
+    let response = await fetch('https://api.github.com/users/hiteshchoudhary');
+let user = await response.json();
+
+console.log('async inside  of an iffe',user);
+
+})();
