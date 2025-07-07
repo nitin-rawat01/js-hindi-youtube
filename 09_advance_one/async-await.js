@@ -82,5 +82,38 @@ console.log(user);
 let user = await response.json();
 
 console.log('async inside  of an iffe',user);
-
 })();
+
+
+// await accepts "thenables"
+// Like promise.then, await allows us to use thenable objects (those with callable then method).
+// The idea is that a third-party object may not be a promise, but promise-compatible: if it supports .then, that’s enough to use it with await.
+
+class Thenable {
+    constructor(num){
+        this.num = num;
+    }
+
+    then(resolve, reject){
+        console.log("Inside of class", resolve);
+        setTimeout(resolve(this.num*2), 1000); // (*)
+    }
+}
+
+async function fourth(){
+    // wait for 1 second, then result becomes 
+    let result =  await new Thenable(34);
+    console.log(result);
+}
+fourth();
+// if await gets a non-promise object with .then, it calls that method providing the built-in-functions resolve and reject as arguments (just as it does for a regular Promise executor). Then await waits until one of them is called (in the example above it happens in the line (*)) and then proceeds with the result.
+
+// Async class methods
+// To declare an async class method, just prepend it with async:
+class Waiter {
+    async wait() {
+        return await Promise.resolve(1);
+    }
+}
+
+new Waiter().wait().then(console.log('async-in-class ',response));
