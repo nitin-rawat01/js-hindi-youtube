@@ -1,0 +1,32 @@
+Debounce Intro: 
+Debouncing in JavaScript is a technique used to control the rate at which a function is executed, particularly when that function is triggered by events that fire frequently and rapidly, such as user input (typing), window resizing, or scrolling. The core idea is to ensure that a function only runs after a specified period of inactivity following the last time it was invoked.
+Agr user kuch specified time tk kuch type nhi karega to hi api call hoga..agr usne beech me interupt kiya to hum timer ko reset kr denge.
+
+Debounce and throttle do no diff hai but interlink hai.
+
+Implement google like feature of search suggestions/ auto suggestions:
+    what we can do: Jab bhi key press hoga ek api call krdo
+    H -> API CALL
+    HA -> API CALL
+    HAR -> API CALL
+    HARD -> API CALL
+    HARD J -> API CALL
+    HARD JS -> API CALL
+    Note: this method make to many api call to the database, waste lot of search query
+
+    Better way is we will do api call only when user stop typing for few secs/milliseconds
+    Hard JS interview q -> first api call.
+    Hard JS interview questions -> second api call.
+    Solution: only do api call when user do little delay/stop. 
+
+This concept is called debounce: agr user specified time tk kuch type nhi karega to hi api call hoga verna usna beech me disturb kiya to timer dubra restart ho jayega.
+Basically we wait -> timer -> we use do not type api call verna restart the timer
+
+Debouncing is really useful in these scenarios: Where you have autocomplete, when you want to make sure you do one request after everything is changed, like if you have bunch of changes happening all once you can batch them up and send them all off at once with debounce.
+
+Throttle: api call be made after the time interval.
+Real life example: live stream on youtube. 
+After first message on live chat ...you can send next message only after 60 seconds..all the messages between 60 seconds are ignored by the server.
+this is called slow mode on youtube.
+
+difference btw debounce and throttle: in debounce we restart the timer after last call. in throttle do not restart the timer just call the api after a interval.        

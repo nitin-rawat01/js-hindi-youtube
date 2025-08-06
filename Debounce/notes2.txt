@@ -1,0 +1,41 @@
+Learn Debounce And Throttle In 16 Minutes 
+
+An "input event" refers to an event that occurs when the value or content of an input element changes. This event is commonly associated with user interactions such as typing in text fields, selecting options from dropdown menus, or pasting content.
+
+
+// cons: we make 6 request to the server that come back at the different race and that is not only going to cause UI problems but also huge's burden for the people using your code because now they make 6 network request downloaded them and if they are on slow network or using data...this will slow down the app..if their connection is not quick enough to keep up.
+
+// debounce and throttle is a way to slow down the function. instead of calling the function every single time.what it's going to do it's only going to call that function after a set delay..that delay is going to different based on debouncing and throttling...they have a diff way of working.
+
+Simple throttle:
+const updateThrottleText = throttle((text) => {
+    throttleText.textContent = text;
+})
+input.addEventListener("input", (e) => {
+    defaultText.textContent = e.target.value;
+    updateDebounceText(e.target.value);
+    updateThrottleText(e.target.value);
+})
+function throttle(cb, delay = 1000) {
+    let shouldWait = false;
+
+    return((...args) => {
+        if(shouldWait) return;
+        cb(...args);
+        shouldWait = true;
+        setTimeout(() => {
+            shouldWait = false;
+        }, delay)
+    })
+}
+Advance Throttle: So that it will save whatever the last call to it was and send that out after one second.
+that way you make sure you get other information into it.
+example: simple throttle: type asdf , output -> a (ignore sdf, because it got type within one second)
+
+
+
+
+
+
+
+
