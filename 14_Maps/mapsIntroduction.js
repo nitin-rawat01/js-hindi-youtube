@@ -84,6 +84,29 @@ console.log(typeof fruits); // objects
 console.log(fruits instanceof Map); // true
 
 
+// Introduction Part- 3
+// Using objects as Key: is one of the most notable and importand feature of map.
+const apples = {name: "Apples"};
+const john = {name: "John"};
+
+let randomMap = new Map();
+randomMap.set(apples, "Apples");
+randomMap.set(john, "johnny");
+console.log(randomMap);
+// Accessing values
+console.log(randomMap.get("john")); // undefined 
+console.log(randomMap.get(john)); 
+// Remember: The key is an object (john), not a string ("john"):
+
+// Chaining in map: Every map.set call returns the map itself
+const chainingMap = new Map();
+// setting Values
+chainingMap.set('1', 'str1')
+  .set(1, 'num1')
+  .set(true, 'bool1');
+ 
+ console.log(chainingMap);
+
 
 
 
