@@ -19,6 +19,6 @@ for(const [key, value] of userSettings){
 }
 
 // using forEach
-userSettings.forEach((value, key) => {
+userSettings.forEach((value, key, map) => {
     console.log(`Key: ${key}, Value: ${value}`)
 })
