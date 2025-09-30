@@ -58,6 +58,31 @@ console.log(myMap.size);
 // Although map[key] also works, e.g. we can set map[key] = 2, this is treating map as a plain JavaScript object, so it implies all corresponding limitations (only string/symbol keys and so on).
 //So we should use map methods: set, get and so on.
 
+// Introduction to map part 2
+// Creating map by passing array to new Map() constructor
+// create Map
+const fruits = new Map([
+      ["apples", 500],
+      ["bananas", 300],
+      ["oranges", 200]
+    ]);
+console.log(fruits);
+
+// Creating map with set Method
+const newFruits = new Map();
+// Set Map Values
+newFruits.set("apples", 500);
+newFruits.set("bananas", 300);
+newFruits.set("oranges", 200);
+console.log(newFruits);
+
+//Maps are objects
+// typeof returns object
+console.log(typeof fruits); // objects
+
+// instanceof Map returns true
+console.log(fruits instanceof Map); // true
+
 
 
 
