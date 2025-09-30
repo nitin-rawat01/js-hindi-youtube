@@ -54,6 +54,12 @@ console.log(myMap);
 console.log(myMap.size);
 
 
+// note: map[key] isn’t the right way to use a Map
+// Although map[key] also works, e.g. we can set map[key] = 2, this is treating map as a plain JavaScript object, so it implies all corresponding limitations (only string/symbol keys and so on).
+//So we should use map methods: set, get and so on.
+
+
+
 
 
 
