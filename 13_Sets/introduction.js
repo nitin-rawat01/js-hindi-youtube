@@ -36,7 +36,25 @@ setOne.delete(4)
 // console.log(setOne.size);
 
 
-// forEach and for of
+// Listing the Elements
+// You can list all Set elements (values) with a for..of loop:
+// create a set
+const letters = new Set(['a', 'b', 'c']);
+
+// List all elements
+for(const char of letters){
+    console.log(char); // a b c
+}
+
+// forEach
 // That’s why when you use forEach on a Set, the callback gives you value, value (instead of key, value like Map):
 // Both key and value are the same in a Set.
 setOne.forEach((item, index) => console.log(index));
+
+// sets are objects
+// typeof returns object
+console.log(typeof  letters) ;  // Returns object
+
+// instanceof Set returns true:
+console.log(letters instanceof Set);  // Returns true
+
