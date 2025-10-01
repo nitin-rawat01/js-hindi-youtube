@@ -9,7 +9,7 @@ let recipeMap = new Map([
 for(let vegitables of recipeMap){
     //console.log(vegitables); // returns [key, value]
 }
-// note: use array destructring [key, value] in place of vegitables
+// note: use array destructring [key, value] in place of vegitables to hold key and value separately
 
 // Iteration over map using 3 methods
 // keys, values, entries
