@@ -58,3 +58,32 @@ console.log(typeof  letters) ;  // Returns object
 // instanceof Set returns true:
 console.log(letters instanceof Set);  // Returns true
 
+// Example for using set
+// For example, we have visitors coming, and we’d like to remember everyone. But repeated visits should not lead to duplicates. A visitor must be “counted” only once.
+// Set is just the right thing for that:
+let set = new Set();
+
+let john = { name: "John" };
+let pete = { name: "Pete" };
+let mary = { name: "Mary" };
+
+// visits, some users come multiple times
+set.add(john);
+set.add(pete);
+set.add(mary);
+set.add(john);
+set.add(mary);
+
+// set keeps only unique values
+console.log(set.size); // 3
+
+// set of visitors
+console.log(set);
+
+for(let user of set){
+    console.log(user.name); // John, Pete, Mary
+}
+
+
+
+
